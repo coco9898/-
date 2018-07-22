@@ -1,0 +1,20 @@
+<view class="fansub-wrapper">
+    <view class="main-img">
+        <image mode="aspectFit" src="{{image}}"></image>
+    </view>
+    <view class="list">
+        <scroll-view scrollY="true">
+            <view class="item" wx:for="{{list}}">
+                <view class="img">
+                    <image mode="aspectFit" src="{{item.path}}"></image>
+                </view>
+                <view class="ipt">
+                    <input bindinput="inputWord" data-index="{{index}}" placeholder="{{item.content}}" placeholderStyle="color:#bbb;" type="text"></input>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view bindtap="create" class="create-btn">
+        生成字幕表情
+    </view>
+</view>

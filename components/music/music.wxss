@@ -1,0 +1,31 @@
+.music {
+    position: absolute;
+    width: 76rpx;
+    height: 76rpx;
+    z-index: 99;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.music-on {
+    animation: music-rotate 4s linear infinite;
+}
+
+@-webkit-keyframes music-rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes music-rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}

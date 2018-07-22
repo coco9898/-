@@ -1,0 +1,80 @@
+.top {
+    height: 100rpx;
+    font-size: 28rpx;
+    color: #888888;
+    line-height: 124rpx;
+    padding-left: 30rpx;
+}
+
+.radio-group {
+    background: #fff;
+    padding-left: 30rpx;
+}
+
+.radio {
+    display: block;
+    height: 88rpx;
+    line-height: 88rpx;
+    position: relative;
+}
+
+.other {
+    height: 120rpx;
+    line-height: 160rpx;
+}
+
+.othertext {
+    background: #fff;
+    width: 100%;
+    height: 150rpx;
+    box-sizing: border-box;
+    padding: 28rpx 30rpx;
+    font-size: 34rpx;
+    margin-bottom: 30rpx;
+}
+
+.confirm {
+    width: 670rpx;
+    height: 94rpx;
+    margin: 0 auto 120rpx;
+    font-size: 36rpx;
+    color: #FFFFFF;
+}
+
+.mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 400;
+}
+
+.icon-wrap {
+    height: 328rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 54rpx;
+}
+
+.suc-icon {
+    margin: 100rpx auto;
+}
+
+.tip {
+    text-align: center;
+    font-size: 45rpx;
+    margin-bottom: 104rpx;
+}
+
+.tip-gray {
+    color: #aaa;
+    font-size: 30rpx;
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+
+.goback {
+    width: 92%;
+}

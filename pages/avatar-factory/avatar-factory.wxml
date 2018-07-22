@@ -1,0 +1,46 @@
+<view class="page flex flex-vertical">
+    <view class="avatar-block flex-item">
+        <image class="avatar-img" src="{{avatarUrl}}" wx:if="{{avatarUrl}}"></image>
+        <open-data class="avatar-img" type="userAvatarUrl" wx:else></open-data>
+        <movable-area class="avatar-header-area" wx:if="{{materialList[curIndex].pic}}">
+            <movable-view bindchange="moveMaterical" bindscale="scareMaterical" class="avatar-header-move" direction="all" scale="{{true}}" scaleMax="3" scaleValue="{{scaleValue}}" x="{{x}}" y="{{y}}">
+                <view class="avatar-header-operation" style="transform: rotate({{rotate+'deg'}})">
+                    <image class="avatar-header" src="{{materialList[curIndex].pic}}"></image>
+                    <view catchtouchmove="moveRotate" class="avatar-header-rotate">
+                        <image class="avatar-header-rotate-icon" src="/resources/img/rotate.png"></image>
+                    </view>
+                </view>
+            </movable-view>
+            <view class="upload-btn">
+                <image src="/resources/img/upload.png"></image>
+                <text>上传</text>
+                <upload item="{{uploadObj}}" previewShow="{{false}}" sizeType="{{['compressed']}}" trimed="{{trimedImg}}" type="text-btn" wrapClass="wrap-cover"></upload>
+            </view>
+        </movable-area>
+    </view>
+    <view class="scroll-note flex-item">双指捏合缩放</view>
+    <view class="selection-block flex-item-1">
+        <view class="selection-content flex flex-middle">
+            <image class="selection-content-icon" src="/resources/img/football.png"></image>选择你支持的球队：
+		</view>
+        <scroll-view class="selection-scroll-area" scrollY="{{true}}">
+            <view class="selection-item-container cf">
+                <view catch:tap="changeMaterial" class="selection-item" data-index="{{index}}" wx:for="{{materialList}}">
+                    <image class="selection-item-material {{curIndex===index?'active':''}}" src="{{item.pic}}"></image>
+                    <text>{{item.name}}</text>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="operation-block flex-item flex flex-center">
+        <button class="btn operation-btn flex-item-1" openType="share">
+            <image class="operation-btn-icon" src="/resources/img/share.png"></image>分享给队友
+		</button>
+        <button catch:tap="tapSavePhoto" class="btn btn-primary operation-btn flex-item-1">
+            <image class="operation-btn-icon" src="/resources/img/save.png"></image>保存到相册
+		</button>
+        <button bindgetuserinfo="getUserInfo" class="btn authorize-btn operation-btn" openType="getUserInfo" wx:if="{{!avatarUrl}}"></button>
+    </view>
+    <canvas canvasId="avatarCanvas" class="postar-canvas"></canvas>
+    <canvas canvasId="smallAvatarCanvas" class="avatar-canvas"></canvas>
+</view>

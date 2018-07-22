@@ -1,0 +1,11 @@
+<view class="{{wrapClass}}">
+    <view class="content">
+        <view class="title" style="font-size:{{item.rule.length>3?'32rpx':'36rpx'}};" wx:if="{{type=='text-btn'&&item.rule.length}}">{{item.rule}}</view>
+        <image class="img" mode="aspectFit" src="{{item.img_path}}" wx:if="{{type=='image-btn'&&item.img_path}}"></image>
+        <image class="preview" mode="aspectFill" src="{{preview}}" wx:if="{{preview&&previewShow}}"></image>
+        <view bindtap="_chooseImage" class="btn">
+            <image src="{{icon}}"></image>
+            <text>{{uploaded?'重新上传':btnText}}</text>
+        </view>
+    </view>
+</view>

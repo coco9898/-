@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "语音表情",
+    "usingComponents": {
+        "v-message": "../_components/message/message",
+        "v-record": "../_components/record/record"
+    }
+}

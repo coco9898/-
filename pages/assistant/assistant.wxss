@@ -1,0 +1,63 @@
+.assistant-section {
+    background: #f4f4f4;
+    padding: 30rpx 30rpx 126rpx;
+}
+
+.assistant-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 96rpx;
+    font-size: 32rpx;
+    color: #333;
+    background: #ffda44;
+    border-radius: 0;
+    z-index: 100;
+}
+
+.contact-icon {
+    display: flex;
+    margin-right: 12rpx;
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.assistant-contact::after,.assistant-contact::before {
+    border: none;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+.overflow+.overflow {
+    margin-top: 30rpx;
+}
+
+.icon {
+    margin: 0 10rpx;
+    width: 66rpx;
+    height: 66rpx;
+    vertical-align: middle;
+}
+
+.collapse-detail-img {
+    display: block;
+    width: 100%;
+}
+
+view+.collapse-detail-img,text+.collapse-detail-img,.collapse-detail-img+text {
+    margin-top: 30rpx;
+    display: block;
+}
+
+.title-em {
+    padding-right: 10rpx;
+    font-size: 36rpx;
+    line-height: 1;
+    color: #888;
+}

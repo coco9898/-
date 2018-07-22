@@ -1,0 +1,4 @@
+<view>
+    <image bindtap="imgTap" class="img" mode="widthFix" src="{{img}}"></image>
+    <view catchtap="goAlbum" class="album-link"></view>
+</view>

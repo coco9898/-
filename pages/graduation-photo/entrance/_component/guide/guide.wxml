@@ -1,0 +1,16 @@
+<view catch:tap="closeModal" class="guide-modal" wx:if="{{active&&swipeList.length}}">
+    <view class="guide-header">
+        <view class="guide-title">合照大接力</view>
+        <view class="guide-note">—— 和朋友一起拼出Q萌合照 ——</view>
+    </view>
+    <swiper autoplay="{{autoplay}}" circular="{{circular}}" class="swipe-container" duration="{{duration}}" indicatorActiveColor="{{indicatorActiveColor}}" indicatorColor="{{indicatorColor}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+        <swiper-item wx:for="{{swipeList}}">
+            <image class="swiper-item-image" mode="widthFix" src="{{item.src}}"></image>
+            <view class="swipe-item-text">{{item.text}}</view>
+        </swiper-item>
+    </swiper>
+    <button class="close-modal-btn">
+        <image class="close-modal-icon" src="/resources/img/correct.png"></image>
+		get玩法
+	</button>
+</view>

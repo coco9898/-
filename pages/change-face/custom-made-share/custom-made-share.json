@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "search": "/components/search/search",
+        "music": "/components/music/music",
+        "share-guide": "/components/share-guide/share-guide"
+    },
+    "enablePullDownRefresh": false
+}

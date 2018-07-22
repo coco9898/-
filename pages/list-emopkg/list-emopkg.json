@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "search": "/components/search/search",
+        "bottom-share": "/components/bottom-share/bottom-share",
+        "bottom-unlock": "/components/bottom-unlock/bottom-unlock"
+    }
+}

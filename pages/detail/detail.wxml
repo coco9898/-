@@ -1,0 +1,74 @@
+<scroll-view bindscrolltolower="loadMore" class="container" enableBackToTop="true" lowerThreshold="100" scrollY="true">
+    <search prepend pagePath="{{pagePath}}"></search>
+    <view class="preview">
+        <image bindtap="showPreview" class="{{previewImgClass}}" mode="aspectFit" src="{{preview.thumb}}" style="width: {{w}}" wx:if="{{preview.thumb||status!=='loading'}}"></image>
+        <image class="loading-pic" hidden="{{status!=='loading'}}" src="https://dl.weshineapp.com/misc/newloading.gif"></image>
+        <view class="lock-mask" wx:if="{{lockShow}}"></view>
+        <image class="copyright" mode="widthFix" src="/resources/img/detail-copyright.png" wx:if="{{showCopyright}}"></image>
+    </view>
+    <view class="pagination" wx:if="{{hasPreviewList}}">
+        <view bindtap="prev" class="prev" hoverClass="hover" wx:if="{{curEmojiPos>1}}">
+            <image src="/resources/img/detail-prev.png"></image>
+            <text>上一张</text>
+        </view>
+        <view class="count">第{{curEmojiPos}}/{{curPackageListLength}}张</view>
+        <view bindtap="next" class="next" hoverClass="hover" wx:if="{{curEmojiPos<curPackageListLength}}">
+            <text>下一张</text>
+            <image src="/resources/img/detal-next.png"></image>
+        </view>
+    </view>
+    <view class="ds-space"></view>
+    <view class="detail-share">
+        <view bindtap="goReport" class="ds-content">
+            <image class="icons" src="../../resources/img/detail-report.png"></image>
+            <view class="ds-text">举报投诉</view>
+        </view>
+        <view bindtap="switchCollect" class="ds-content">
+            <image class="icons" src="{{collected?'../../resources/img/detail-havecollect.png':'../../resources/img/detail-nocollect.png'}}"></image>
+            <view class="ds-text">{{collected?'已收藏':'收藏表情'}}</view>
+        </view>
+        <view bindtap="saveImage" class="ds-content">
+            <image class="icons" src="../../resources/img/detail-save.png"></image>
+            <view class="ds-text">保存表情</view>
+        </view>
+        <view bindtap="shareImage" class="ds-content">
+            <image class="icons" src="../../resources/img/detail-share.png"></image>
+            <view class="ds-text">分享表情</view>
+        </view>
+        <view bindtap="goInstruction" class="ds-content" hoverClass="none">
+            <image class="icons" src="../../resources/img/detail-instruct.png"></image>
+            <view class="ds-text bgc-opc">使用说明</view>
+        </view>
+        <view class="ds-content">
+            <image class="icons" src="../../resources/img/detail-recom.png"></image>
+            <view class="ds-text">推荐给好友</view>
+            <button bindtap="pingReco" class="ds-sharebtn" openType="share"></button>
+        </view>
+        <view bindtap="goAddfont" class="ds-content" hoverClass="none">
+            <image class="icons" src="../../resources/img/detail-changeword.gif"></image>
+            <view class="ds-text">加字改字</view>
+        </view>
+        <view class="ds-content" style="border-right: none;"></view>
+        <view class="first-cover" wx:if="{{firstCover}}"></view>
+    </view>
+    <ad-link list="{{adList}}" refer="detail" wx:if="{{adStatus==1}}"></ad-link>
+    <ad unitId="adunit-8a34e8d2c7e9e062" wx:if="{{adShow}}"></ad>
+    <pkg-link kw="{{pingRequest.kw}}" list="{{emoList}}"></pkg-link>
+    <view class="section section-related">
+        <view class="titlebar one-px-b">
+            <view class="title">相关表情</view>
+        </view>
+        <view class="giflist">
+            <view class="pic lazyload" wx:for="{{gifList}}">
+                <navigator openType="redirectTo" url="../detail/detail?id={{item.id}}&refer=related">
+                    <image id="{{item.id}}" mode="{{item.w/item.h>2||item.h/item.w>2?'aspectFit':'aspectFill'}}" src="{{item.thumb}}"></image>
+                </navigator>
+            </view>
+            <view class="pic placeholder"></view>
+        </view>
+        <list-loading len="{{gifList.length}}"></list-loading>
+    </view>
+    <share-guide id="share-component" imgSrc="{{preview.ori}}"></share-guide>
+    <bottom-unlock lockPkgName="{{lockPkgName}}" lockShow="{{lockShow}}"></bottom-unlock>
+</scroll-view>
+<desktop-tip show="{{desktopTipShow}}"></desktop-tip>

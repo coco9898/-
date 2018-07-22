@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "表情加字",
+    "usingComponents": {
+        "search": "/components/search/search",
+        "list-loading": "/components/list-loading/list-loading"
+    }
+}

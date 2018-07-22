@@ -1,0 +1,77 @@
+view {
+    background-color: transparent;
+}
+
+.fansub-wrapper {
+}
+
+.main-img {
+    height: 450rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+    margin-bottom: 30rpx;
+}
+
+.main-img image {
+    height: 100%;
+    width: 100%;
+}
+
+.list {
+    position: absolute;
+    top: 450rpx;
+    bottom: 200rpx;
+    left: 0;
+    width: 100%;
+    overflow: auto;
+}
+
+.list scroll-view {
+    height: 100%;
+}
+
+.list .item {
+    height: 88rpx;
+    display: flex;
+    margin: 0 20rpx 20rpx;
+}
+
+.list .item .img {
+    height: 100%;
+    width: 122rpx;
+    margin-right: 20rpx;
+}
+
+.list .item .img image {
+    height: 100%;
+    width: 100%;
+}
+
+.list .item .ipt {
+    flex-grow: 1;
+    background: #fff;
+    border-radius: 10rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.list .item .ipt input {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.create-btn {
+    height: 88rpx;
+    line-height: 88rpx;
+    width: 290rpx;
+    font-size: 28rpx;
+    color: #333333;
+    text-align: center;
+    box-shadow: 0 0 20rpx 0 rgba(0,0,0,0.10);
+    border-radius: 8rpx;
+    background: #FFDA44;
+    position: fixed;
+    left: 50%;
+    margin-left: -145rpx;
+    bottom: 68rpx;
+}

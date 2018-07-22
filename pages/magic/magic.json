@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "神配图",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "share-guide": "/components/share-guide/share-guide"
+    }
+}

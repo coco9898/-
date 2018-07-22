@@ -1,0 +1,13 @@
+<scroll-view bindscrolltolower="loadMore" class="gif-list-scroll" lowerThreshold="100" scrollY="{{true}}">
+    <search bind:submit="goToSearch" noSugg="{{true}}" pagePath="{{pagePath}}" placeholder="搜索你想要的动作模版" prepend="{{true}}" searchHistoryKey="searchTextTemplateHistory" searchValue="{{keyword}}" targetPage="{{pagePath}}"></search>
+    <view class="section">
+        <list-loading len="{{gifList.length}}" style="width:100%;"></list-loading>
+        <view class="giflist">
+            <view class="pic lazyload" wx:for="{{gifList}}" wx:key="id">
+                <image bind:tap="goAddfont" class="pic-image" data-image-info="{{item}}" mode="{{item.w/item.h>2||item.h/item.w>2?'aspectFit':'aspectFill'}}" src="{{item.url}}"></image>
+            </view>
+            <view class="pic placeholder"></view>
+            <view class="pic placeholder"></view>
+        </view>
+    </view>
+</scroll-view>

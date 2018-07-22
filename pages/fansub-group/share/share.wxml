@@ -1,0 +1,26 @@
+<view class="share-wrapper">
+    <view class="main-img">
+        <image mode="aspectFit" src="{{image}}"></image>
+    </view>
+    <view class="btns">
+        <view bindtap="goHome" class="home"></view>
+        <view bindtap="goDetail" class="create">
+            <view class="pen"></view>
+            我也要制作
+        </view>
+    </view>
+    <view class="tip">DIY更多搞笑字幕动图表情
+        <view class="arrow"></view>
+    </view>
+    <view class="fixed">
+        <view bindtap="goReport" class="report">
+            <view class="icon"></view>
+            <text>举报投诉</text>
+        </view>
+        <view bindtap="toDownload" class="save">
+            <view class="icon"></view>
+            <text>保存表情</text>
+        </view>
+    </view>
+    <share-guide id="share-component" imgSrc="{{image}}"></share-guide>
+</view>

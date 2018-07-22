@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "录制语音",
+    "disableScroll": true,
+    "usingComponents": {
+        "v-record": "../_components/record/record"
+    }
+}

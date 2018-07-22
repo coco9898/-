@@ -1,0 +1,6 @@
+<view bindtap="_adLinkTap" class="apppic-wrap">
+    <image class="apppic" src="{{list.img}}"></image>
+    {{list.name}}
+    <view class="goapp">{{list.title}} ></view>
+</view>
+<web-view src="{{webUrl}}" wx:if="{{webUrl}}"></web-view>

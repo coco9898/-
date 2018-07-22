@@ -1,0 +1,13 @@
+<scroll-view class="pkg-sort" wx:if="{{!tip}}">
+    <view class="list-reco">
+        <navigator class="list-reco__item lazyload" url="../list-emopkg/list-emopkg?kw={{item.name}}&id={{item.id}}" wx:for="{{pkgsList}}">
+            <image mode="aspectFill" src="{{item.img[0]}}"></image>
+            <view class="lock" wx:if="{{item.lock_status=='1'}}"></view>
+            <p>{{item.name}}</p>
+        </navigator>
+        <navigator class="list-reco__item lazyload placeholder"></navigator>
+        <navigator class="list-reco__item lazyload placeholder"></navigator>
+        <navigator class="list-reco__item lazyload placeholder"></navigator>
+    </view>
+</scroll-view>
+<view class="result {{tip?'':'hasResult'}}">{{tip}}</view>

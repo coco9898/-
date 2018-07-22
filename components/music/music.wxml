@@ -1,0 +1,1 @@
+<image bindtap="_handleAudio" class="music {{rotate&&musicClass}}" src="{{icon}}" style="{{position}}" wx:if="{{music}}"></image>

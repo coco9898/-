@@ -1,0 +1,14 @@
+.content {
+    font-size: 14px;
+    padding: 0 30rpx;
+}
+
+text {
+    line-height: 50rpx;
+    margin: 50rpx 0;
+    display: block;
+}
+
+.section-first {
+    text-indent: 28px;
+}

@@ -1,0 +1,32 @@
+<scroll-view class="container contain-magic {{status}} gif-list-scroll" scrollY="true">
+    <view class="magic-wrap" wx:if="{{opt.kw}}">
+        <view class="magic-box">
+            <image class="magic-loading" hidden="{{finished}}" src="https://dl.weshineapp.com/misc/newloading.gif"></image>
+            <image class="magic-img" hidden="{{!finished}}" mode="aspectFit" src="{{magicSrc}}"></image>
+        </view>
+        <view class="magic-progress" style="width:{{progress}}"></view>
+    </view>
+    <view class="magic-wrap no-kw" wx:if="{{!opt.kw}}">
+        <image class="no-kw-bg" mode="aspectFit" src="{{defaultPic}}"></image>
+    </view>
+    <view class="btns">
+        <view bindtap="onemore" class="btn">
+            <image class="icon" src="../../resources/img/onemore@3x.png"></image>
+      再来一张
+    </view>
+        <view bindtap="saveImage" class="btn">
+            <image class="icon" src="../../resources/img/save.png"></image>
+      下载表情
+    </view>
+        <view bindtap="shareImage" class="btn">
+            <image class="icon" src="../../resources/img/share.png"></image>
+      分享表情
+    </view>
+        <view class="loading-mask" wx:if="{{!finished}}"></view>
+    </view>
+    <view class="inputWrap">
+        <input confirmHold bindconfirm="confirm" bindinput="setValue" focus="{{inputFocus}}" id="inputKw" placeholder="请输入要合成的文字" placeholderClass="placeholder1" type="text" value="{{inputValue}}"></input>
+        <button bindtap="confirm" class="finish">合成</button>
+    </view>
+    <share-guide id="share-component" imgSrc="{{magicSrc}}"></share-guide>
+</scroll-view>

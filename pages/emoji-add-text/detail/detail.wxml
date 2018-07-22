@@ -1,0 +1,66 @@
+<view class="container contain-magic {{status}}">
+    <view class="magic-wrap">
+        <view class="magic-box">
+            <image class="loading-pic" hidden="{{finished}}" mode="aspectFit" src="https://dl.weshineapp.com/misc/newloading.gif"></image>
+            <movable-area class="img-wrap" hidden="{{!finished}}" style="width: {{imgWidth}}rpx;height: {{imgHeight}}rpx">
+                <view style="width: {{imgWidth}}rpx;height: {{imgHeight}}rpx">
+                    <image class="magic-img" mode="aspectFit" src="{{currentSrc}}"></image>
+                </view>
+                <movable-view bindchange="positionChange" bindtouchend="thend" bindtouchmove="thmove" bindtouchstart="thstart" class="move-text" damping="100" direction="all" style="width: {{textWidth}}rpx;height: {{textHeight}}rpx;line-height: {{textHeight}}rpx;" x="{{x}}" y="{{y}}">
+                    <view bindtap="focusInput" class="preview" hidden="{{hiddenPreview}}" style="width: {{imgWidth}}rpx;text-shadow:-1px -1px 0 {{currentFont.strokeColor}},1px -1px 0 {{currentFont.strokeColor}},-1px 1px 0 {{currentFont.strokeColor}},1px 1px 0 {{currentFont.strokeColor}};color:{{currentFont.fontColor}};font-size: {{fontSize}}rpx;">
+                        <view class="border" style="background-color: {{bgList[bgCurrent].bg}}">{{inputValue||'单击此处编辑文字'}}</view>
+                    </view>
+                    <input bindblur="blurHandler" bindconfirm="confirm" bindfocus="focusHandler" bindinput="setValue" focus="{{inputFocus}}" maxlength="15" placeholder="输入想加的文字" placeholderStyle="font-size: 24rpx;color: #ccc;" style="width: {{imgWidth}}rpx;height:{{textHeight+4}}rpx;line-height: {{textHeight+4}}rpx;min-height: 0;color:{{inputColor}};font-size: {{textHeight}}rpx;opacity:{{inputOpacity}};" type="text" value="{{inputValue}}"></input>
+                    <view class="bg" hidden="{{!hiddenPreview}}" style="background: #fff;">{{inputValue||'单击此处编辑文字'}}</view>
+                </movable-view>
+                <view class="mask" hidden="{{hideMask}}"></view>
+            </movable-area>
+        </view>
+    </view>
+    <view class="bct choose-fonts" hidden="">
+        <view class="bct title">
+            <view class="line"></view>
+            <view class="bct text">选择文字样式</view>
+            <view class="line"></view>
+        </view>
+        <view class="styles-wrap bct">
+            <view class="style-item bct">
+                <view class="text bct">
+                    <image class="icon" src="/resources/img/adf-font-size.png"></image>
+                    <text>字体大小</text>
+                </view>
+                <view class="bct select">
+                    <view bindtap="changeFontSize" class="select-rect {{index===sizeCurrent?'active':''}}" data-index="{{index}}" style="font-size:{{item.btnSize}}rpx" wx:for="{{sizeList}}">{{item.name}}</view>
+                </view>
+            </view>
+            <view class="style-item bct">
+                <view class="text bct">
+                    <image class="icon" src="/resources/img/adf-bg.png"></image>
+                    <text>背景颜色</text>
+                </view>
+                <view class="bct select">
+                    <view bindtap="changeBg" class="select-rect bcg {{index===bgCurrent?'active':''}}" data-index="{{index}}" style="background-color: {{item.bg}}" wx:for="{{bgList}}">
+                        <image src="/resources/img/adf-transparent.png" wx:if="{{item.bg==='transparent'}}"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="style-item bct">
+                <view class="text text-color bct">
+                    <image class="icon" src="/resources/img/adf-fcolor.png"></image>
+                    <text>字体颜色</text>
+                </view>
+                <view class="bct select select-family">
+                    <image bindtap="chooseFont" class="text-preview {{index==currentIndex?'active':''}}" data-index="{{index}}" mode="aspectFit" src="{{item.url}}" wx:for="{{fontsList}}" wx:key="fkey"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="btns">
+        <view bindtap="getEmoji" class="btn get-emoji {{!finished?'disable':''}}">
+            <image class="icon get-emoji" src="/resources/img/save.png"></image>
+            <text>{{finished?'生成表情':'生成中...'}}</text>
+        </view>
+        <view class="loading-mask" wx:if="{{!finished}}"></view>
+    </view>
+    <share-guide id="share-component" imgSrc="{{finishedSrc}}"></share-guide>
+</view>

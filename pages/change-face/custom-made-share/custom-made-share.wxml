@@ -1,0 +1,52 @@
+<music id="music-component" music="{{bgm}}" position="right: 40rpx; top: 40rpx;"></music>
+<view class="pic-wrap bgc-opc">
+    <image bindtap="previewGif" class="pic" mode="aspectFit" src="{{showGif}}" wx:if="{{showGif}}"></image>
+    <image class="loading" src="../../../resources/img/loading.gif" wx:if="{{!showGif}}"></image>
+</view>
+<view class="change-wrap bgc-opc" wx:if="{{replaced}}">
+    <view class="change-content bgc-opc">
+        <view bindtap="showMask" class="upload btn btn-replaced">重新换脸</view>
+        <view class="share-rep btn btn-replaced">
+            <image src="../../../resources/img/share.png"></image>
+      分享音乐表情
+      <button openType="share"></button>
+        </view>
+        <view class="pre-mask" wx:if="{{!showGif}}"></view>
+    </view>
+</view>
+<view class="change-wrap bgc-opc" wx:if="{{noReplaced}}">
+    <view class="change-content bgc-opc">
+        <view class="share btn">
+            <image src="../../../resources/img/share.png"></image>
+      分享音乐表情
+      <button openType="share"></button>
+        </view>
+        <view bindtap="showMask" class="change btn">
+      一键换脸
+    </view>
+        <view class="guide-wrap bgc-opc">
+            <view class="guide bgc-opc">
+                <text>把自己或朋友的照片放进表情里！</text>
+                <image src="/resources/img/arrow.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="save-wrap bgc-opc">
+    <view bindtap="saveImage" class="report save bgc-opc">保存表情(无声版)</view>
+</view>
+<view bindtap="closeMask" class="mask" wx:if="{{maskShow}}">
+    <view class="mode-wrap bgc-opc">
+        <view class="mode-content">
+            <view catchtap="preventPro" class="mode guide">
+                <text>请选一张正脸自拍照，要求光线均匀、五官清晰无遮挡
+尝试各种表情更有趣哦</text>
+            </view>
+            <view bindtap="chooseMode" class="mode one-px-t" data-mode="camera">拍一张照片</view>
+            <view bindtap="chooseMode" class="mode one-px-t" data-mode="album">相册选图</view>
+        </view>
+        <view class="cancel mode">取消</view>
+    </view>
+</view>
+<image src="{{result}}"></image>
+<share-guide id="share-component" imgSrc="{{showGif}}"></share-guide>

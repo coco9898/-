@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "预览表情",
+    "disableScroll": true,
+    "usingComponents": {
+        "v-message": "../_components/message/message"
+    }
+}

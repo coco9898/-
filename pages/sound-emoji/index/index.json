@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "cover": "../_components/cover/cover",
+        "list-loading": "/components/list-loading/list-loading"
+    }
+}

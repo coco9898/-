@@ -1,0 +1,13 @@
+<view class="list">
+    <view class="member" wx:for="{{membersList}}">
+        <view class="pic-wrap">
+            <image mode="aspectFit" src="{{item.figure_url}}"></image>
+        </view>
+        <view class="info">
+            <image mode="aspectFill" src="{{item.avatar}}"></image>
+            <view>{{item.nickname}}</view>
+        </view>
+    </view>
+    <view class="placeholder member"></view>
+</view>
+<button class="btn share-btn {{lack_num===0?'disabled':''}}" disabled="{{lack_num===0?true:false}}" openType="share">邀请朋友</button>

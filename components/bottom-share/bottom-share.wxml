@@ -1,0 +1,24 @@
+<view class="space" wx:if="{{shareShow}}"></view>
+<view class="list-share one-px-t" wx:if="{{shareShow}}">
+    <view class="ls-text">分享此套表情包：</view>
+    <view class="ls-btn">
+        <view class="lsb-content lsbc-friend">好友</view>
+        <button bindtap="_pingShare" class="ls-sharebtn" data-type="friend" openType="share"></button>
+    </view>
+    <view bindtap="_showMask" class="ls-btn ls-btn-circle">
+        <view class="lsb-content lsbc-circle">朋友圈</view>
+    </view>
+</view>
+<view bindtap="_closeMask" class="list-mask" hidden="{{!maskShow}}">
+    <view catchtap="_stopPropagation" class="lm-wrap bgc-opc">
+        <view class="lm-image-wrap">
+            <image class="lm-image" mode="aspectFit" src="{{maskImg}}" wx:if="{{maskImg}}"></image>
+            <image class="loading" hidden="{{maskImg}}" src="../../resources/img/loading.gif"></image>
+        </view>
+        <view class="txt-tip">保存后可分享至朋友圈</view>
+        <view class="lm-btn-wrap bgc-opc">
+            <view bindtap="_closeMask" class="lmb-cancel lm-btn" data-type="cancel">取消</view>
+            <view bindtap="_saveImage" class="lmb-save lm-btn">保存</view>
+        </view>
+    </view>
+</view>

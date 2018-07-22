@@ -1,0 +1,17 @@
+<view>
+    <view class="item" wx:if="{{canRecord}}">
+        <view class="state-txt">{{state===0?'按住录音':'已录制：'+duration+'秒'}}</view>
+        <view class="cg-wrap">
+            <view class="circle-left-wrap">
+                <view class="circle-left" style="transform:{{circleLeft}}"></view>
+            </view>
+            <view class="circle-right-wrap">
+                <view class="circle-right" style="transform:{{circleRight}}"></view>
+            </view>
+            <view bind:touchend="endRecord" bind:touchstart="startRecord" class="record-btn" style="background-image: url({{backgroundUrl}})"></view>
+        </view>
+    </view>
+    <view class="authToRecord" wx:else>
+        <view bind:tap="startAuthorize">开启录音授权</view>
+    </view>
+</view>

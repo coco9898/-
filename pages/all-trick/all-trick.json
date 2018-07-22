@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "套路表情包",
+    "usingComponents": {
+        "bottom-button": "../../components/bottom-button/bottom-button",
+        "search": "../../components/search/search"
+    }
+}

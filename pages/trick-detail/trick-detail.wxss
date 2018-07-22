@@ -1,0 +1,41 @@
+.bottom-btn-wrapper {
+    position: fixed;
+    bottom: 34rpx;
+    left: 0;
+    right: 0;
+    height: 88rpx;
+    z-index: 1;
+    background: transparent;
+    display: flex;
+}
+
+.share-btn-wrapper {
+    position: relative;
+    background-color: transparent;
+}
+
+.share-btn-wrapper .sharebtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    z-index: 1;
+}
+
+image {
+    width: 100%;
+}
+
+.trick-detail {
+    padding-bottom: 132rpx;
+}
+
+.sharebtn::after {
+    border: none;
+}
+
+.downloademoji {
+    margin: 0 54rpx 0 50rpx;
+}

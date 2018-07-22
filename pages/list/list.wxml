@@ -1,0 +1,94 @@
+<scroll-view bindscrolltolower="loadMore" class="gif-list-scroll {{tip?'no-scroll':''}}" lowerThreshold="100" scrollY="true">
+    <view style="margin-bottom: 20rpx;">
+        <search prepend pagePath="{{pagePath}}" searchValue="{{kw}}"></search>
+    </view>
+    <navigator class="pageword {{showBlank?'':'section'}}" url="{{pageLink.path}}" wx:if="{{pageLink.through&&pageLink.through==1}}">
+        <image class="pageword-item" src="{{pageLink.icon}}"></image>
+        <view class="pageword-item content">
+            <view class="pageword-title">{{pageLink.name}}</view>
+            <view class="pageword-tip">
+        {{pageLink.detail}}
+      </view>
+        </view>
+        <view class="pageword-item icon-right"></view>
+    </navigator>
+    <pkg-link kw="{{kw}}" list="{{emoList}}"></pkg-link>
+    <view class="section section-hot" wx:if="{{hotList.length>0}}">
+        <view class="titlebar one-px-b">
+            <view class="title">最热推荐</view>
+        </view>
+        <view class="giflist">
+            <view class="pic lazyload" wx:for="{{hotList}}">
+                <view bindtap="goDetail" data-item="{{item}}">
+                    <image mode="{{item.w/item.h>2||item.h/item.w>2?'aspectFit':'aspectFill'}}" src="{{item.url}}"></image>
+                </view>
+            </view>
+            <view class="pic placeholder"></view>
+        </view>
+    </view>
+    <ad-link list="{{adList}}" refer="list" wx:if="{{adStatus==1&&gifList.length>0}}"></ad-link>
+    <view class="section section-newest" style="margin-bottom:{{relatesList.length?'30rpx':'0rpx'}}" wx:if="{{gifList.length>0&&haveResult}}">
+        <view class="titlebar one-px-b">
+            <view class="title">最近更新</view>
+        </view>
+        <view class="giflist">
+            <view class="pic lazyload" wx:for="{{gifList}}">
+                <view bindtap="goDetail" data-item="{{item}}">
+                    <image mode="{{item.w/item.h>2||item.h/item.w>2?'aspectFit':'aspectFill'}}" src="{{item.url}}"></image>
+                </view>
+            </view>
+            <view class="pic placeholder"></view>
+            <view class="pic placeholder"></view>
+        </view>
+    </view>
+    <view class="result {{tip?'':'hasResult'}}">{{tip}}</view>
+    <view class="noresult" hidden="{{!showBlank}}">
+        <image src="/resources/img/list-noresult.png"></image>
+        <view class="text">
+            <view>无搜索结果</view>
+            <view>小编拼命补图中</view>
+            <view>您可以尝试以下操作</view>
+        </view>
+    </view>
+    <view class="blacklist" wx:if="{{dangerWord}}">
+        <view>抱歉，暂无搜索结果</view>
+        <view>净化网络，抵制低俗</view>
+        <view style="padding-bottom: 30rpx;background:#fff;margin-top: 80rpx;" wx:if="{{iconsStatus}}">
+            <funcs bind:openUrl="openUrl" curPage="违禁词搜索" list="{{iconsList}}"></funcs>
+        </view>
+    </view>
+    <view class="section gomagic" wx:if="{{showBlank}}">
+        <view class="gomagic-wrap">
+            <image class="gomagic-img" mode="aspectFit" src="{{magicSrc}}"></image>
+        </view>
+        <view class="gomagic-text">
+            <view class="tit">神配图</view>
+            <view class="intro">把你的话变成动态表情包</view>
+            <view bindtap="goMagic" class="gomagic-btn">点击立即合成</view>
+        </view>
+    </view>
+    <view class="section  section-related no-gap" wx:if="{{relatesList.length>0}}">
+        <view class="titlebar one-px-b">
+            <view class="title">相关表情</view>
+        </view>
+        <view class="relates" wx:for="{{relatesList}}">
+            <view class="relate-title">{{item.name}}</view>
+            <view class="giflist relatelist">
+                <view class="pic lazyload" wx:for="{{item.items}}" wx:for-item="relate">
+                    <view bindtap="goRelate" data-item="{{relate}}">
+                        <image mode="{{relate.w/relate.h>2||relate.h/relate.w>2?'aspectFit':'aspectFill'}}" src="{{relate.url}}"></image>
+                    </view>
+                </view>
+                <view class="pic placeholder"></view>
+                <view class="pic placeholder"></view>
+                <view class="mask" hidden="{{item.count<7}}"></view>
+                <view bindtap="goRelateList" class="gomore" data-name="{{item.name}}" hidden="{{item.count<7}}">
+                    <view class="more-num bgc-opc">{{item.count}}</view>
+                    <view class="more-text bgc-opc">查看更多</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <web-view src="{{webUrl}}" wx:if="{{webUrl}}"></web-view>
+    <bottom-share bindgetcard="getCard" kw="{{kw}}" maskImg="{{maskImg}}" shareShow="{{shareShow}}" wx:if="{{shareStatus=='1'}}"></bottom-share>
+</scroll-view>

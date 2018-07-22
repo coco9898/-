@@ -1,0 +1,90 @@
+.detail-container {
+    padding-bottom: 124rpx;
+}
+
+view {
+    background: transparent;
+}
+
+.video {
+    height: 480rpx;
+}
+
+.video video {
+    height: 100%;
+    width: 100%;
+}
+
+.white-bg {
+    background: #fff;
+}
+
+.record-btn {
+    margin: 20rpx;
+}
+
+.record-btn image {
+    margin-right: 12rpx;
+    width: 40rpx;
+}
+
+.detail-record-info {
+    padding: 30rpx;
+    background: #fff;
+}
+
+.detail-avatar-img {
+    margin-right: 20rpx;
+    width: 88rpx;
+    height: 88rpx;
+    border: 1px solid #ddd;
+}
+
+.detail-username {
+    margin-bottom: 8rpx;
+    font-size: 32rpx;
+    line-height: 44rpx;
+}
+
+.detail-createtime {
+    font-size: 24rpx;
+    color: #ccc;
+}
+
+.detail-buttle-info {
+    position: absolute;
+    font-size: 28rpx;
+    color: #ccc;
+    line-height: 1;
+    right: 30rpx;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.operation-group {
+    border-top: 1px solid #ddd;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 16rpx 0;
+}
+
+.operation-btn {
+    height: 72rpx;
+    line-height: 72rpx;
+    border-radius: 0;
+}
+
+.operation-btn+.operation-btn {
+    border-left: 1px solid #e5e5e5;
+}
+
+.operation-btn image {
+    margin-right: 16rpx;
+    width: 40rpx;
+}
+
+.mb-20 {
+    margin-bottom: 20rpx;
+}

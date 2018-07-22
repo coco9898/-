@@ -1,0 +1,29 @@
+<view class="section">
+    <view class="titlebar one-px-b">
+        <image src="/resources/img/icon4.png"></image>
+        <view class="title">热门方言</view>
+    </view>
+    <view class="icon-wrap">
+        <view bindtap="goList" class="item" data-id="{{item.id}}" wx:for="{{iconList}}">
+            <view class="icon">
+                <image mode="aspectFit" src="{{item.img}}"></image>
+            </view>
+            <text>{{item.name}}</text>
+        </view>
+    </view>
+    <list-loading wx:if="{{!iconList.length}}"></list-loading>
+</view>
+<view class="list-wrap">
+    <view>
+        <view class="titlebar one-px-b">
+            <image src="/resources/img/icon1184.png"></image>
+            <view class="title">热门配音</view>
+        </view>
+    </view>
+    <view bindtap="goDetail" class="section" data-id="{{item.id}}" wx:for="{{worksList}}">
+        <cover></cover>
+    </view>
+    <view wx:if="{{!worksList.length}}">
+        <list-loading></list-loading>
+    </view>
+</view>

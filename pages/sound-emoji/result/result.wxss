@@ -1,0 +1,55 @@
+view {
+    background: transparent;
+}
+
+.video {
+    height: 480rpx;
+    background: #000;
+}
+
+.video video {
+    height: 100%;
+    width: 100%;
+}
+
+.btns {
+    display: flex;
+    padding: 0 10rpx;
+    margin-top: 20rpx;
+    height: 88rpx;
+}
+
+.btns .icon {
+    height: 40rpx;
+    width: 40rpx;
+    margin-right: 20rpx;
+}
+
+.btns .btn {
+    height: 100%;
+    margin: 0 10rpx;
+    flex-grow: 1;
+    border-radius: 10rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFDA44;
+}
+
+.btns .share {
+    background: #fff;
+    padding: 0;
+}
+
+.btns .share::after {
+    border: none;
+}
+
+.btns .text {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.mb-20 {
+    margin-bottom: 20rpx;
+}

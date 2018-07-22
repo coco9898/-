@@ -1,0 +1,22 @@
+<block wx:if="{{list.length>0}}">
+    <view class="list-emoji" wx:for="{{list}}">
+        <view bindtap="_pkgTap" data-item="{{item}}">
+            <view class="list-emoji__info">
+                <text class="list-emoji__info--name">{{item.name}}表情包 ({{item.count}}张)</text>
+            </view>
+            <view class="list-emoji__info">
+                <text class="list-emoji__info--summary">{{item.summary}}</text>
+            </view>
+            <view class="list-emoji__gif">
+                <view class="gif-wrap lazyload" wx:if="{{index<5}}" wx:for="{{item.img}}" wx:for-item="subitem">
+                    <image mode="aspectFill" src="{{subitem}}"></image>
+                </view>
+                <view class="placeholder gif-wrap"></view>
+                <view class="placeholder gif-wrap"></view>
+                <view class="placeholder gif-wrap"></view>
+                <view class="mask gif-wrap" wx:if="{{item.count>5}}">{{item.count}}+</view>
+            </view>
+            <view class="lock" wx:if="{{item.lock_status}}"></view>
+        </view>
+    </view>
+</block>

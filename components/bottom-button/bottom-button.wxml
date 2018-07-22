@@ -1,0 +1,6 @@
+<view class="bt-btn" style="{{mystyle}}">
+    <image class="icon" src="{{icon}}"></image>
+    <text>
+        <slot></slot>
+    </text>
+</view>

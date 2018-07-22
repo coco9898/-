@@ -1,0 +1,75 @@
+.rel {
+    position: relative;
+}
+
+.state-txt {
+    font-size: 30rpx;
+    color: #888;
+    text-align: center;
+    padding-top: 100rpx;
+    padding-bottom: 16rpx;
+}
+
+.cg-wrap {
+    margin: 0 auto;
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #FF9A00;
+}
+
+.circle-left-wrap,.circle-right-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 90px;
+    overflow: hidden;
+}
+
+.circle-right-wrap {
+    left: 45px;
+}
+
+.circle-left,.circle-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #eee;
+    transition: all 0.1s linear;
+}
+
+.circle-right {
+    left: -45px;
+    clip: rect(0,auto,auto,45px);
+}
+
+.circle-left {
+    clip: rect(0,45px,auto,0);
+}
+
+.record-btn {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-size: 100% 100%;
+}
+
+.authToRecord {
+    height: 80rpx;
+    width: 350rpx;
+    background: #FFDA44;
+    font-size: 30rpx;
+    color: #222;
+    line-height: 80rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    margin: 40rpx auto;
+}

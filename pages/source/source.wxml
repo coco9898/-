@@ -1,0 +1,22 @@
+<scroll-view scrollY="true" wx:if="{{!tip}}">
+    <view class="section section-source" wx:for="{{pkgSortList}}">
+        <view class="pkgbar one-px-b">
+            <image class="source-icon" src="../../resources/img/icon{{item.id||1184}}.png"></image>
+            <view class="title">{{item.title}}</view>
+            <navigator class="all-sort" url="../pkg-sort/pkg-sort?aid={{item.id}}&title={{item.title}}">查看所有({{item.count}})</navigator>
+        </view>
+        <view class="list-reco">
+            <view class="list-reco__item lazyload" wx:for="{{item.list}}" wx:for-item="package">
+                <navigator url="../list-emopkg/list-emopkg?kw={{package.name}}&id={{package.id}}">
+                    <image mode="aspectFill" src="{{package.img[0]}}"></image>
+                    <view class="lock" wx:if="{{package.lock_status=='1'}}"></view>
+                    <p>{{package.name}}</p>
+                </navigator>
+            </view>
+            <view class="list-reco__item placeholder"></view>
+            <view class="list-reco__item placeholder"></view>
+            <view class="list-reco__item placeholder"></view>
+        </view>
+    </view>
+</scroll-view>
+<view class="result {{tip?'':'hasResult'}}">{{tip}}</view>

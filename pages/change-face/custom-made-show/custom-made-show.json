@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "search": "/components/search/search",
+        "music": "/components/music/music"
+    },
+    "enablePullDownRefresh": false
+}

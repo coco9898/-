@@ -1,0 +1,29 @@
+page {
+    background-color: #fff;
+}
+
+.list-wrap {
+    box-sizing: border-box;
+    padding: 20rpx 20rpx 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.list-wrap .item {
+    width: 344rpx;
+    font-size: 0;
+}
+
+.list-wrap .item image {
+    width: 100%;
+    height: 230rpx;
+    border-radius: 10rpx;
+}
+
+.list-wrap .item view {
+    line-height: 80rpx;
+    font-size: 32rpx;
+    color: #4A4A4A;
+    text-align: center;
+}

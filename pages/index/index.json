@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "slide-banner": "/pages/index/slider/slider",
+        "funcs": "/pages/index/funcs/funcs",
+        "search": "/components/search/search",
+        "list-loading": "/components/list-loading/list-loading",
+        "ad-link": "/components/ad-link/ad-link"
+    },
+    "enablePullDownRefresh": true
+}

@@ -1,0 +1,30 @@
+<music id="music-component" music="{{bgm}}" position="right: 40rpx; top: 40rpx;"></music>
+<view class="pic-wrap">
+    <image bindtap="previewGif" class="pic" mode="aspectFit" src="{{showGif}}" wx:if="{{showGif}}"></image>
+    <image class="loading" src="/resources/img/loading.gif" wx:if="{{!showGif}}"></image>
+</view>
+<view class="create">
+    <view class="btns-big">
+        <navigator class="home" openType="reLaunch" url="/pages/index/index">
+            <image src="/resources/img/home.png"></image>
+        </navigator>
+        <navigator bindtap="pingPlay" class="create-too" url="/pages/change-face/custom-made/custom-made">
+            <image src="/resources/img/create.png"></image>
+            <text>我也要制作</text>
+        </navigator>
+        <view class="guide-wrap">
+            <view class="guide">
+                <text>把自己或朋友的照片放进表情里！</text>
+                <image src="/resources/img/arrow.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="little-btn-wrap">
+    <view class="report-wrap">
+        <navigator class="report" url="/pages/report/report?id={{targetKey}}">举报投诉</navigator>
+    </view>
+    <view class="save-wrap ">
+        <view bindtap="previewGif" class="report save">保存表情(无声版)</view>
+    </view>
+</view>

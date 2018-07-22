@@ -1,0 +1,47 @@
+<block wx:if="{{gifList.length>0}}">
+    <scroll-view bindscrolltolower="loadMore" class="gif-list-scroll list-emopkg" enableBackToTop="true" lowerThreshold="100" scrollY="true">
+        <search prepend pagePath="{{pagePath}}"></search>
+        <view bindtap="clickEmojiTip" class="emoji-tip" wx:if="{{emojiTip}}">
+            <view class="icon"></view>
+            <view class="tit">{{emojiTip.title}}</view>
+            <view class="arrow"></view>
+        </view>
+        <view class="music-emoji" wx:if="{{musicEmoji}}">
+            <view bindtap="clickMusicEmoji" class="img" style="background-image: url({{musicEmoji.cover_pic}})">
+                <view class="mask"></view>
+            </view>
+            <view bindtap="clickMusicEmoji" class="mid">
+                <view class="tit">{{musicEmoji.title}}</view>
+                <view class="dur">{{musicEmoji.time}}</view>
+            </view>
+            <view class="share btn one-px-r">
+                <view class="center">
+                    <image src="../../resources/img/share.png"></image>
+                    <text>分享</text>
+                </view>
+                <button id="shareMusicEmoji" openType="share"></button>
+            </view>
+            <view bindtap="dlMusicEmoji" class="save btn">
+                <view class="center">
+                    <image src="../../resources/img/save.png"></image>
+                    <text>保存</text>
+                </view>
+            </view>
+        </view>
+        <view class="giflist" style="padding-bottom:{{paddingBottom}}rpx;">
+            <view bindtap="gifTap" class="pic lazyload" data-item="{{item}}" wx:for="{{gifList}}">
+                <image mode="{{item.w/item.h>2||item.h/item.w>2?'aspectFit':'aspectFill'}}" src="{{item.thumb_url}}"></image>
+                <view class="lock" wx:if="{{lockShow}}"></view>
+            </view>
+            <view class="pic placeholder"></view>
+            <view class="pic placeholder"></view>
+        </view>
+        <bottom-share bindgetcard="getCard" maskImg="{{maskImg}}" shareShow="{{shareShow}}" wx:if="{{shareStatus=='1'}}"></bottom-share>
+        <bottom-unlock lockPkgName="{{lockPkgName}}" lockShow="{{lockShow}}" matExist="{{matExist}}"></bottom-unlock>
+    </scroll-view>
+    <form bindsubmit="clickPrize" class="prize-form" reportSubmit="true" wx:if="{{showPrize}}">
+        <image class="prize-form-item" mode="aspectFit" src="/resources/img/prize.png"></image>
+        <button class="prize-form-item" formType="submit"></button>
+    </form>
+</block>
+<view class="result {{tip?'':'hasResult'}}">{{tip}}</view>

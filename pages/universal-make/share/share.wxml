@@ -1,0 +1,34 @@
+<view class="share-wrapper">
+    <view class="main-img">
+        <image bindtap="previewImage" mode="widthFix" src="{{image}}"></image>
+    </view>
+    <view class="create">
+        <view class="btns-big">
+            <navigator class="home" openType="reLaunch" url="/pages/index/index">
+                <image src="/resources/img/home.png"></image>
+            </navigator>
+            <view bindtap="goDetail" class="create-too">
+                <image src="/resources/img/create.png"></image>
+                <text>我也要制作</text>
+            </view>
+            <view class="guide-wrap">
+                <view class="guide">
+                    <text>{{guideTip}}</text>
+                    <image src="/resources/img/arrow.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="btns">
+        <view bindtap="goReport" class="report">
+            <view class="icon"></view>
+            <text>举报投诉</text>
+        </view>
+        <view bindtap="toDownload" class="save">
+            <view class="icon"></view>
+            <text>保存表情</text>
+        </view>
+    </view>
+    <share-guide id="share-component" imgSrc="{{image}}"></share-guide>
+    <music id="music-component" music="{{bgMusic}}"></music>
+</view>

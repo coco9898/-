@@ -1,0 +1,16 @@
+<view class="list">
+    <view class="item">
+        <view class="img" wx:if="{{type=='image-select'}}">
+            <image mode="aspectFit" src="{{item.img_path}}"></image>
+        </view>
+        <view class="title" style="font-size:{{item.rule.length>3?'32rpx':'36rpx'}};" wx:if="{{type=='text-select'}}">
+      {{item.rule}}
+    </view>
+        <picker bindchange="_pickerChange" class="ipt" range="{{item.select}}" value="{{item.select[tapIndex]}}">
+            <view class="picker-content">
+                <text>{{item.select[tapIndex]}}</text>
+                <image src="/resources/img/triangle.png"></image>
+            </view>
+        </picker>
+    </view>
+</view>

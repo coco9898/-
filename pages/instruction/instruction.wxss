@@ -1,0 +1,40 @@
+.collect-guide-wrapper {
+    color: #666;
+    font-size: 32rpx;
+    line-height: 44rpx;
+    letter-spacing: 0.8rpx;
+    padding-top: 34rpx;
+    padding-bottom: 60rpx;
+    background-color: transparent;
+}
+
+.collect-guide-wrapper .steptext {
+    width: 630rpx;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.collect-guide-wrapper .stepimg {
+    display: block;
+    width: 432rpx;
+    margin: 40rpx auto 70rpx;
+    box-shadow: 0 8rpx 20rpx 0 rgba(0,0,0,0.1);
+}
+
+.collect-guide-wrapper .stepimg-first {
+    margin: 40rpx auto 50rpx;
+    width: 304rpx;
+    box-shadow: none;
+}
+
+.btn {
+    width: 290rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    background: #FFDA44;
+    font-size: 32rpx;
+    color: #222222;
+    margin: 0 auto;
+    border-radius: 10rpx;
+}

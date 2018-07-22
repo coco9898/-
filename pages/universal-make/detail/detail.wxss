@@ -1,0 +1,106 @@
+view {
+    background-color: transparent;
+}
+
+.main-img {
+    height: 516rpx;
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-img image {
+    width: 500rpx;
+}
+
+.list {
+    width: 100%;
+    overflow: auto;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.list scroll-view {
+    height: 100%;
+}
+
+.list .item {
+    height: 88rpx;
+    display: flex;
+    margin-bottom: 20rpx;
+}
+
+.list .item:last-child {
+    margin-bottom: 0;
+}
+
+.list .item .img {
+    height: 100%;
+    width: 122rpx;
+    margin-right: 20rpx;
+}
+
+.list .item .img image {
+    height: 100%;
+    width: 100%;
+}
+
+.list .item .ipt {
+    flex-grow: 1;
+    background: #fff;
+    border-radius: 10rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.list .item .ipt input {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.btn-wrap {
+    width: 100%;
+    padding: 40rpx 20rpx;
+    box-sizing: border-box;
+    margin-bottom: 100rpx;
+}
+
+.create-btn {
+    height: 88rpx;
+    line-height: 88rpx;
+    width: 100%;
+    font-size: 28rpx;
+    color: #333333;
+    text-align: center;
+    border-radius: 8rpx;
+    background: #FFDA44;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-btn image {
+    width: 36rpx;
+    height: 36rpx;
+    margin-right: 18rpx;
+}
+
+.create-btn text {
+    font-size: 28rpx;
+    color: #333333;
+}
+
+image.loading {
+    width: 360rpx;
+    height: 180rpx;
+}
+
+.input-selector .tip {
+    color: #999;
+    font-size: 28rpx;
+    text-align: center;
+    line-height: 2;
+}

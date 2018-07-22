@@ -1,0 +1,57 @@
+view {
+    background: none;
+}
+
+.main-img {
+    height: 450rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+    margin-bottom: 20rpx;
+}
+
+.main-img image {
+    height: 100%;
+    width: 100%;
+}
+
+.btns {
+    display: flex;
+    padding: 0 10rpx;
+}
+
+.btns .btn {
+    margin: 0 10rpx;
+    height: 88rpx;
+    background: #fff;
+    border-radius: 10rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    position: relative;
+}
+
+.btns .btn text {
+    display: block;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.btns .btn button {
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.btns .btn button::after {
+    border: none;
+}
+
+.btns .btn image {
+    height: 40rpx;
+    width: 40rpx;
+    margin-right: 20rpx;
+}

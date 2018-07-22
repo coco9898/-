@@ -1,0 +1,10 @@
+{
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "input-box": "/pages/universal-make/components/input-box/input-box",
+        "selector": "/pages/universal-make/components/selector/selector",
+        "upload": "/pages/universal-make/components/upload/upload",
+        "input-selector": "/pages/universal-make/components/input-selector/input-selector",
+        "music": "/components/music/music"
+    }
+}

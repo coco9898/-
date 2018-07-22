@@ -1,0 +1,295 @@
+page {
+    font-family: -apple-system-font,'Helvetica Neue',Helvetica,'Microsoft YaHei',sans-serif;
+    background-color: #f4f4f4;
+    height: 100%;
+}
+
+.one-px:before {
+    content: "";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #eee;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    padding: 1px;
+    box-sizing: border-box;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.one-px-t:before {
+    content: "";
+    height: 1px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transform: scaleY(0.4);
+    box-sizing: border-box;
+    pointer-events: none;
+    background: #eee;
+    position: absolute;
+    z-index: 1;
+}
+
+.one-px-b:after {
+    content: "";
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform: scaleY(0.4);
+    box-sizing: border-box;
+    pointer-events: none;
+    background: #eee;
+    position: absolute;
+    z-index: 1;
+}
+
+.one-px-r:after {
+    content: "";
+    width: 1px;
+    right: 0;
+    height: 100%;
+    transform: scaleX(0.4);
+    box-sizing: border-box;
+    pointer-events: none;
+    background: #eee;
+    position: absolute;
+    z-index: 1;
+}
+
+view {
+    background-color: #fff;
+}
+
+.section {
+    margin-bottom: 30rpx;
+    position: relative;
+}
+
+.no-gap {
+    border: none;
+    margin-bottom: 0!important;
+}
+
+.giflist {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20rpx 20rpx 0;
+}
+
+.pic {
+    width: 223rpx;
+    height: 223rpx;
+    margin: 0 0 20rpx 0;
+    overflow: hidden;
+}
+
+.gif-list-scroll {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.gif-list-scroll.no-scroll {
+    height: auto;
+}
+
+.placeholder {
+    height: 0!important;
+    visibility: hidden;
+    margin: 0!important;
+    font-size: 0;
+}
+
+.lazyload:nth-child(6n+1) image {
+    background-color: #FFB8AE;
+}
+
+.lazyload:nth-child(6n+2) image {
+    background-color: #B6EFFF;
+}
+
+.lazyload:nth-child(6n+3) image {
+    background-color: #FFD8A2;
+}
+
+.lazyload:nth-child(6n+4) image {
+    background-color: #EACCFF;
+}
+
+.lazyload:nth-child(6n+5) image {
+    background-color: #CCD4FF;
+}
+
+.lazyload:nth-child(6n+6) image {
+    background-color: #BCFFDA;
+}
+
+.bgc-opc {
+    background-color: rgba(0,0,0,0);
+}
+
+.loading-mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 999;
+}
+
+.all-btn {
+    font-size: 30rpx;
+    color: #BBBBBB;
+}
+
+.list-reco {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 20rpx 20rpx 0;
+    text-align: center;
+}
+
+.list-reco__item {
+    width: 162rpx;
+    margin: 0 5rpx 24rpx;
+}
+
+.list-reco__item navigator,.list-reco__item image {
+    width: 162rpx;
+    height: 162rpx;
+    display: block;
+}
+
+.list-reco__item navigator {
+    height: 212rpx;
+}
+
+.list-reco__item p {
+    color: #222;
+    height: 20px;
+    margin-top: 10rpx;
+    display: block;
+    overflow: hidden;
+}
+
+.list-reco__item.placeholder {
+    margin-bottom: 0rpx;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    height: 150rpx;
+    align-items: center;
+    color: #999;
+    background-color: #f9f9f9;
+}
+
+.result.hasResult {
+    height: 0;
+}
+
+.hover {
+    background-color: rgba(0,0,0,0.1);
+    opacity: 0.7;
+}
+
+.block-section {
+    padding: 20rpx;
+}
+
+.cf:after,.cf:before {
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.btn {
+    border-radius: 0;
+    padding: 0;
+    height: 96rpx;
+    font-size: 28rpx;
+    line-height: 1.5;
+    color: #333;
+    text-align: center;
+    background: #fff;
+    border-radius: 10rpx;
+}
+
+.btn.btn-l {
+    font-size: 32rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+}
+
+.btn.btn-primary {
+    background: #ffda44;
+}
+
+.btn:after,.btn:before {
+    border: none;
+}
+
+.v-section+.v-section {
+    margin-top: 20rpx;
+}
+
+.flex,.flex-vertical {
+    display: flex;
+    align-items: stretch;
+}
+
+.flex-vertical {
+    flex-direction: column;
+}
+
+.flex-start {
+    align-items: flex-start;
+}
+
+.flex-middle {
+    align-items: center;
+}
+
+.flex-end {
+    align-items: flex-end;
+}
+
+.flex-justify {
+    justify-content: space-between;
+}
+
+.flex-around {
+    justify-content: space-around;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-item {
+    flex: 0 0 auto;
+}
+
+.flex-item-auto {
+    flex: auto;
+}
+
+.flex-item-1 {
+    flex: 1;
+}
+
+.flex-item-2 {
+    flex: 2;
+}

@@ -1,0 +1,21 @@
+<view class="result-wrapper">
+    <view class="main-img">
+        <image bindtap="previewImage" mode="widthFix" src="{{image}}"></image>
+    </view>
+    <view class="btn-wrap">
+        <view class="btn-content">
+            <view class="btn">
+                <image src="/resources/img/share.png"></image>
+                <text>分享给好友</text>
+                <button class="wx-share btn" openType="share"></button>
+            </view>
+            <view bindtap="toDownload" class="btn">
+                <image src="/resources/img/save.png"></image>
+                <text>保存到相册</text>
+            </view>
+        </view>
+    </view>
+    <share-guide id="share-component" imgSrc="{{image}}"></share-guide>
+    <share-guide id="qrcode-component" imgSrc="{{qrcodeImg}}" wx:if="qrcodeImg"></share-guide>
+    <music id="music-component" music="{{bgMusic}}"></music>
+</view>

@@ -1,0 +1,31 @@
+<scroll-view bindscrolltolower="loadMore" class="custom-made" enableBackToTop="true" lowerThreshold="100" scrollTop="{{scrollTop}}" scrollY="true">
+    <search prepend pagePath="{{pagePath}}"></search>
+    <view class="section section-face" wx:if="{{!tip}}" wx:for="{{gifList}}">
+        <view class="pkgbar one-px-b">
+            <view class="title">{{item.name}}</view>
+        </view>
+        <view class="giflist">
+            <view bindtap="clickImage" class="pic " data-item="{{tpl}}" wx:for="{{item.tpls}}" wx:for-item="tpl">
+                <image mode="aspectFit" src="{{tpl.have_face}}"></image>
+            </view>
+            <view class="pic placeholder"></view>
+            <view class="pic placeholder"></view>
+        </view>
+    </view>
+    <view class="result {{tip?'':'hasResult'}}">{{tip}}</view>
+    <view class="holder bgc-opc">{{nomoreTip}}</view>
+</scroll-view>
+<view bindtap="closeMask" class="mask" wx:if="{{maskShow}}">
+    <view class="mode-wrap bgc-opc">
+        <view class="mode-content">
+            <view catchtap="preventPro" class="mode guide">
+                <text>请选一张正脸自拍照，要求光线均匀、五官清晰无遮挡
+尝试各种表情更有趣哦</text>
+            </view>
+            <view bindtap="chooseMode" class="mode one-px-t" data-mode="camera">拍一张照片</view>
+            <view bindtap="chooseMode" class="mode one-px-t" data-mode="album">相册选图</view>
+        </view>
+        <view class="cancel mode">取消</view>
+    </view>
+</view>
+<canvas canvasId="mycanvas" style="position: fixed;left:-10000rpx;top:-10000rpx;width:{{canvasW*2}}rpx;height:{{canvasH*2}}rpx;background:green;z-index:999;"></canvas>

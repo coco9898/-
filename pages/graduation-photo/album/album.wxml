@@ -1,0 +1,24 @@
+<view class="entrance-header flex">
+    <navigator class="entrance-header-item flex-item-1 flex flex-middle flex-center" openType="reLaunch" url="/pages/index/index">
+        <image class="entrance-header-icon" src="/resources/img/home.png"></image>
+        <text>闪萌表情</text>
+    </navigator>
+    <view bindtap="create" class="entrance-header-item flex-item-1 flex flex-center flex-middle">
+        <image class="entrance-header-icon" src="/resources/img/add.png"></image>
+        <text>发起合照</text>
+    </view>
+</view>
+<view class="wrap" wx:if="{{status.noPhoto}}">
+    <view bindtap="create" class="area">
+        <view class="cross">
+            <view class="row"></view>
+            <view class="col"></view>
+        </view>
+    发起合照
+  </view>
+</view>
+<view class="wrap" wx:if="{{status.havePhoto}}">
+    <view bindtap="photoTap" class="photo" data-id="{{item.photo_id}}" wx:for="{{photoList}}">
+        <image mode="aspectFill" src="{{item.show_url}}"></image>
+    </view>
+</view>

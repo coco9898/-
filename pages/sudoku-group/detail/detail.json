@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "upload": "/pages/universal-make/components/upload/upload"
+    },
+    "navigationBarTitleText": "九宫格密语"
+}

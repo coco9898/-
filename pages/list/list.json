@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "bottom-share": "/components/bottom-share/bottom-share",
+        "search": "/components/search/search",
+        "ad-link": "/components/ad-link/ad-link",
+        "pkg-link": "/components/pkg-link/pkg-link",
+        "funcs": "/pages/index/funcs/funcs"
+    }
+}

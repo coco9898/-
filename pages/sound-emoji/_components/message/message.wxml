@@ -1,0 +1,22 @@
+<view class="v-section detail-record-info flex" wx:if="{{type!=='text'}}">
+    <view class="flex-item-1 flex">
+        <image class="detail-avatar-img" src="/resources/img/nocollect.png"></image>
+        <view class="flex-item-1">
+            <view class="detail-username">{{user.username}}</view>
+            <view class="detail-bubble">
+                <image mode="widthFix" src="/resources/img/bubble.png"></image>
+                <view class="detail-buttle-info">{{user.duration}}"</view>
+            </view>
+        </view>
+    </view>
+    <view class="flex-item detail-createtime" hidden="{{hideTime}}">{{user.createTime}}</view>
+</view>
+<view class="detail-record-info flex detail-text" wx:else>
+    <image class="flex-item detail-avatar-img" src="/resources/img/nocollect.png"></image>
+    <view class="flex-item-1 detail-content-section" style="border-bottom:{{isLast?'none':'1px solid #ddd'}};">
+        <view class="detail-username flex">{{user.username}}
+                <view class="detail-createtime">{{user.createTime}}</view>
+        </view>
+        <view class="detail-content">{{user.comment}}</view>
+    </view>
+</view>

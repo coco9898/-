@@ -1,0 +1,21 @@
+<scroll-view bindscrolltolower="loadMore" class="gif-list-scroll list-emopkg" enableBackToTop="true" lowerThreshold="100" scrollY="true" wx:if="{{collectList.length}}">
+    <view class="giflist">
+        <view bindlongpress="longPress" bindtap="clickImage" class="pic lazyload" data-pic="{{item}}" wx:for="{{collectList}}">
+            <image class="coll-img" mode="{{item.w/item.h>2||item.h/item.w>2?'aspectFit':'aspectFill'}}" src="{{item.url}}"></image>
+            <view catchtap="closeAir" class="air bgc-opc" wx:if="{{pressUrl==item.url}}">
+                <view catchtap="cancelCollect" class="air-cancel" data-pic="{{item}}" wx:if="{{index>2}}"></view>
+                <view catchtap="cancelCollect" class="air-cancel-ceiling" data-pic="{{item}}" wx:if="{{index<3}}"></view>
+            </view>
+            <view catchtap="shareImage" class="share" data-pic="{{item}}"></view>
+        </view>
+        <view class="pic placeholder"></view>
+        <view class="pic placeholder"></view>
+    </view>
+</scroll-view>
+<view class="result" wx:if="{{tip}}">{{tip}}</view>
+<view class="empty bgc-opc" wx:if="{{!tip&&!collectList.length}}">
+    <view class="holder bgc-opc"></view>
+    <image src="../../resources/img/noresult.png"></image>
+    <text>您还没有收藏任何表情
+快去发现喜爱的表情吧</text>
+</view>

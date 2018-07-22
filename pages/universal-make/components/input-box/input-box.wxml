@@ -1,0 +1,14 @@
+<view class="list">
+    <view class="item">
+        <view class="img" wx:if="{{type=='image-input'}}">
+            <image mode="aspectFit" src="{{item.img_path}}"></image>
+        </view>
+        <view class="title" style="font-size:{{item.rule.length>3?'32rpx':'36rpx'}};" wx:if="{{type=='text-input'}}">
+            {{item.rule}}
+        </view>
+        <view class="ipt">
+            <input bindinput="_inputWord" data-index="{{index}}" maxlength="{{maxLength}}" placeholder="{{placeholder}}" placeholderStyle="color:#bbb;" type="{{inputType}}"></input>
+            <text>{{inputValueLen}}/{{maxLength}}</text>
+        </view>
+    </view>
+</view>

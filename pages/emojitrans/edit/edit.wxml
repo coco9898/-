@@ -1,0 +1,21 @@
+<view class="input">
+    <textarea bindinput="setValue" maxlength="{{110}}" value="{{inputValue}}"></textarea>
+    <view bindtap="reset" class="r-icon">
+        <image src="/../resources/img/reedit.png"></image>
+    </view>
+</view>
+<view class="btns">
+    <view bindtap="copy" class="btn">
+        <image src="/resources/img/copy.png"></image>
+        <text>拷贝</text>
+    </view>
+    <view bindtap="saveResult" class="save btn">
+        <image src="/resources/img/save.png"></image>
+        <text>保存</text>
+    </view>
+    <view class="share btn">
+        <image src="/resources/img/share.png"></image>
+        <text>分享</text>
+        <button class="btn-share" openType="share"></button>
+    </view>
+</view>

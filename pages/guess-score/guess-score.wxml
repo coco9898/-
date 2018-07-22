@@ -1,0 +1,56 @@
+<canvas canvasId="canvas" style="width: {{canvasW}}px;height: {{canvasH}}px;position:fixed;top: 0;left: -10000px;"></canvas>
+<view class="top-bg">
+    <image class="bg" mode="widthFix" src="https://dl.weshineapp.com/gif/20180625/1529914708_5b30a554c4126.png"></image>
+    <view class="avatar">
+        <open-data type="userAvatarUrl"></open-data>
+    </view>
+</view>
+<view class="game-list">
+    <view class="tip">比分预测活动规则详见闪萌表情公众号</view>
+    <view class="game-item" wx:for="{{list}}" wx:key="fImg">
+        <view class="time">{{item.monthDay}} {{item.hour}}</view>
+        <image class="reward" src="/resources/img/guess-reward.png" wx:if="{{item.award}}"></image>
+        <view class="teams">
+            <view class="team">
+                <image src="{{item.fImg}}"></image>
+                <text>{{item.fName}}</text>
+            </view>
+            <view class="vs">
+                <image src="/resources/img/guess-vs.png"></image>
+            </view>
+            <view class="team">
+                <image src="{{item.sImg}}"></image>
+                <text>{{item.sName}}</text>
+            </view>
+        </view>
+        <view class="scores">
+            <picker bindchange="chooseNum" data-index="{{index}}" data-item="score1" range="{{scoreRange}}" value="{{item.score1||0}}">
+                <view class="score">{{item.score1}}</view>
+                <view class="score default" wx:if="{{!item.score1}}">
+                    <view>点击此处</view>
+                    <view>修改比分</view>
+                </view>
+            </picker>
+            <view class="bi">
+                <image src="/resources/img/guess-bi.png"></image>
+            </view>
+            <picker bindchange="chooseNum" data-index="{{index}}" data-item="score2" range="{{scoreRange}}" value="{{item.score2||0}}">
+                <view class="score">{{item.score2}}</view>
+                <view class="score default" wx:if="{{!item.score2}}">
+                    <view>点击此处</view>
+                    <view>修改比分</view>
+                </view>
+            </picker>
+        </view>
+        <view class="flex btns">
+            <button class="btn c-btn-wrap" data-index="{{index}}" openType="share" style="border-right: 1px solid #eee;">
+                <image src="/resources/img/share.png" style="width: 40rpx;height: 40rpx;vertical-align:middle;"></image>
+                <text style="vertical-align:middle;padding-left: 10rpx;">分享给好友</text>
+            </button>
+            <button bindgetuserinfo="getUserInfo" class="btn c-btn-wrap" data-index="{{index}}" openType="getUserInfo">
+                <image src="/resources/img/save.png" style="width: 40rpx;height: 40rpx;vertical-align:middle;"></image>
+                <text style="vertical-align:middle;padding-left: 10rpx;"> 生成预测海报</text>
+            </button>
+        </view>
+    </view>
+</view>

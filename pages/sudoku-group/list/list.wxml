@@ -1,0 +1,6 @@
+<view class="list-wrap">
+    <view bindtap="goDetail" class="item lazyload" data-id="{{item.id}}" data-title="{{item.title}}" wx:for="{{list}}" wx:key="{{ item.id }}">
+        <image mode="aspectFill" src="{{item.img_path}}"></image>
+        <view class="tit">{{item.title}}</view>
+    </view>
+</view>

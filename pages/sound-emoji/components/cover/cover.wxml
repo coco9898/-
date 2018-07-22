@@ -1,0 +1,18 @@
+<view class="wrap" wx:if="{{item.thumb_url}}">
+    <view class="video">
+        <image class="cover" mode="aspectFit" src="{{item.thumb_url}}"></image>
+        <image class="play-icon" src="/resources/img/video-play.png"></image>
+    </view>
+    <view class="menu">
+        <view class="item userinfo">
+            <image src="/resources/img/prize.png"></image>
+            <text>小强恶意挂机还喷队友惹惹惹哈哈</text>
+        </view>
+        <view class="item msg">
+            <image src="/resources/img/icon4.png"></image>
+            <text class="border">{{9||0}}</text>
+            <image src="/resources/img/favor.png"></image>
+            <text>{{0||0}}</text>
+        </view>
+    </view>
+</view>

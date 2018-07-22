@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "bottom-button": "../../../components/bottom-button/bottom-button",
+        "share-guide": "/components/share-guide/share-guide"
+    },
+    "enablePullDownRefresh": false,
+    "disableScroll": true,
+    "navigationBarTitleText": "恶搞字幕组"
+}

@@ -1,0 +1,17 @@
+<view class="top bgc-opc">请选择举报投诉的理由</view>
+<radio-group bindchange="radioChange" class="radio-group">
+    <label class="radio one-px-b" wx:for="{{items}}">
+        <radio checked="{{item.checked}}" value="{{item.name}}"></radio>{{item.value}}
+    </label>
+</radio-group>
+<view class="top other bgc-opc">填写其他原因</view>
+<textarea bindinput="inputText" class="othertext" cols="30" placeholder="请填写您举报投诉的理由" placeholderStyle="font-size: 34rpx;color: #B2B2B2;" rows="10" wx:if="{{textareaShow}}"></textarea>
+<button bindtap="confirm" class="confirm" type="primary">确认举报投诉</button>
+<view class="mask" wx:if="{{maskShow}}">
+    <view class="icon-wrap">
+        <icon class="suc-icon" size="100" type="success"></icon>
+    </view>
+    <view class="tip">举报内容成功</view>
+    <view class="tip-gray">感谢举报，闪萌团队将在一个工作日内处理</view>
+    <button bindtap="goback" class="goback" type="primary">返回</button>
+</view>

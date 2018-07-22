@@ -1,0 +1,106 @@
+<view bindtap="bannertap" class="banner" wx:if="{{banner.status}}">
+    <image mode="widthFix" src="{{banner.list.img}}"></image>
+</view>
+<view class="search-wrapper">
+    <search append bindsubmit="formSubmit" hideAllList="{{hideSearchList}}" hotWord="{{searchValue}}" openType="navigate" searchFocus="{{searchFocus}}"></search>
+</view>
+<view class="section section-hot" id="myid">
+    <view class="hot-titlebar">
+        <view class="title">大家都在搜:</view>
+        <view bindtap="getHotWords" class="change-btn">
+            <image src="../../resources/img/changehot.png"></image>
+            <text>换一换</text>
+        </view>
+    </view>
+    <view class="wordslist">
+        <list-loading len="{{hotwords.length}}"></list-loading>
+        <form bindsubmit="hotWordsSubmit" reportSubmit="true">
+            <view class="word" hoverClass="hover" wx:for="{{hotwords}}">
+                <text class="word-item">{{item.sword}}</text>
+                <text class="word-tag {{item.color}}" wx:if="{{tags[item.color]}}">{{tags[item.color]}}</text>
+                <button data-kw="{{item.word}}" formType="submit"></button>
+            </view>
+        </form>
+    </view>
+</view>
+<view style="{{!banners.status?'margin: 30rpx 0;padding-bottom: 30rpx;':''}}" wx:if="{{iconsBanner.status}}">
+    <list-loading len="{{iconsBanner.list.length}}"></list-loading>
+    <funcs bind:openUrl="openUrl" list="{{iconsBanner.list}}"></funcs>
+</view>
+<view class="section section-banners" wx:if="{{banners.status}}">
+    <list-loading len="{{banners.list.length}}"></list-loading>
+    <slide-banner bind:openUrl="openUrl" list="{{banners.list}}"></slide-banner>
+</view>
+<view class="section section-recommend">
+    <view class="titlebar one-px-b">
+        <view class="title">热门表情包</view>
+    </view>
+    <view class="list-reco">
+        <list-loading len="{{emojiPkgs.length}}" style="width:100%;"></list-loading>
+        <view class="list-reco__item lazyload" wx:for="{{emojiPkgs}}">
+            <view bindtap="clickEmojiPkg" data-emoji="{{item}}">
+                <image mode="aspectFill" src="{{item.img}}"></image>
+                <view class="lock" wx:if="{{item.lock_status}}"></view>
+                <p>{{item.name}}</p>
+            </view>
+        </view>
+        <view class="list-reco__item lazyload placeholder"></view>
+        <view class="list-reco__item lazyload placeholder"></view>
+        <view class="list-reco__item lazyload placeholder"></view>
+    </view>
+</view>
+<view class="section section-make" wx:if="{{universalMakeData.status==1&&synList.length}}">
+    <view class="titlebar one-px-b">
+        <view class="title" style="background:url({{universalMakeData.icon}})no-repeat 0 50% / 36rpx;">{{universalMakeData.name||''}}</view>
+        <navigator class="all-btn" url="/pages/universal-make/list/list?title={{universalMakeData.name}}">查看更多模板</navigator>
+    </view>
+    <view class="list-wrap">
+        <navigator class="item lazyload" hoverClass="none" url="/pages/universal-make/detail/detail?id={{item.id}}" wx:for="{{synList}}">
+            <image mode="aspectFill" src="{{item.img_path}}"></image>
+            <view>{{item.title}}</view>
+        </navigator>
+        <list-loading len="{{synList.length}}" style="width:100%;"></list-loading>
+    </view>
+</view>
+<view class="section section-trick">
+    <view class="titlebar one-px-b">
+        <view class="title" style="background:url({{tricksData.icon}})no-repeat 0 50% / 36rpx;">{{tricksData.title||''}}</view>
+        <navigator bindtap="pingpackToAllTricks" class="all-btn" url="../all-trick/all-trick">{{tricksData.link_name||''}}</navigator>
+    </view>
+    <view class="list-trick">
+        <list-loading len="{{tricksData.data.length}}"></list-loading>
+        <navigator bindtap="pingbackTricks" class="list-trick__item lazyload" data-id="{{item.id}}" hoverClass="none" url="../trick-detail/trick-detail?trickid={{item.id}}&title={{item.name}}" wx:for="{{tricksData.data}}" wx:key="id">
+            <image class="image" mode="aspectFill" src="{{item.img}}"></image>
+            <view class="text">
+                <view class="trick-name">{{item.name}}</view>
+                <view class="trick-desc">{{item.desc}}</view>
+            </view>
+        </navigator>
+    </view>
+</view>
+<ad-link list="{{adList}}" refer="index" wx:if="{{adStatus==1}}"></ad-link>
+<view class="section no-gap section-newest">
+    <view class="titlebar one-px-b">
+        <view class="title">猜你喜欢</view>
+    </view>
+    <view class="giflist">
+        <list-loading len="{{gifs.length}}" style="width:100%;"></list-loading>
+        <view class="pic lazyload" wx:for="{{gifs}}">
+            <navigator url="../detail/detail?id={{item.id}}&refer=reco&reconum={{index}}">
+                <image mode="{{item.thumb.w/item.thumb.h>2||item.thumb.h/item.thumb.w>2?'aspectFit':'aspectFill'}}" src="{{item.thumb.gif}}"></image>
+            </navigator>
+        </view>
+        <view class="pic placeholder"></view>
+        <view class="pic placeholder"></view>
+    </view>
+</view>
+<view class="section no-gap section-footer">
+    <navigator class="link" hoverClass="link-hover" url="../link/link">闪萌表情版权申明 抵制低俗净化网络</navigator>
+</view>
+<view class="bottom-fixed {{bottomClass}}">
+    <view bindtap="goAssistant" class="helper" data-type="weshinehelper">
+    闪萌小助手
+  </view>
+    <view bindtap="goCollects" class="collector">我的收藏({{collectNum}})</view>
+</view>
+<web-view src="{{webUrl}}" wx:if="{{webUrl}}"></web-view>

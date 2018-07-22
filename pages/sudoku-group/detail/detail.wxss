@@ -1,0 +1,90 @@
+.example {
+    width: 100%;
+    padding: 30rpx 30rpx 40rpx;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin-bottom: 40rpx;
+}
+
+.example .info {
+    display: flex;
+    width: 100%;
+    font-size: 28rpx;
+}
+
+.example .info image {
+    width: 88rpx;
+    height: 88rpx;
+    margin-right: 20rpx;
+}
+
+.example .info .nickname {
+    color: #596C96;
+    margin-bottom: 4rpx;
+}
+
+.example .info .content {
+    color: #333333;
+    width: 540rpx;
+    overflow-wrap: normal;
+}
+
+.sudoku-wrap {
+    box-sizing: border-box;
+    width: 496rpx;
+    height: 496rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    margin-top: 18rpx;
+    margin-left: 108rpx;
+    font-size: 0;
+}
+
+.pic-wrap {
+    width: 156rpx;
+    height: 156rpx;
+    position: relative;
+    overflow: hidden;
+    font-size: 0;
+}
+
+.pic-wrap image {
+    width: 156rpx;
+    position: absolute;
+    left: 0;
+}
+
+.btn-wrap {
+    width: 100%;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-wrap .btn {
+    width: 344rpx;
+    height: 88rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10rpx;
+    background-color: #fff;
+}
+
+.btn-wrap .btn image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+}
+
+.btn-wrap .btn text {
+    font-size: 32rpx;
+    color: #333333;
+}
+
+.upload-com {
+    width: 100%;
+}

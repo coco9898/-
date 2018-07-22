@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "合照预览",
+    "usingComponents": {
+        "music": "/components/music/music",
+        "step-guide": "/components/step-guide/step-guide"
+    }
+}

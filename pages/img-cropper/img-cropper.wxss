@@ -1,0 +1,49 @@
+page {
+    background-color: #2c2c2c;
+}
+
+view {
+    background-color: #2c2c2c;
+}
+
+.canvas-wrap {
+    width: 100%;
+    padding: 20rpx;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.tip {
+    font-size: 28rpx;
+    color: #fff;
+    text-align: center;
+}
+
+.btn-wrap {
+    width: 100%;
+    height: 88rpx;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    margin: 60rpx 0;
+}
+
+.btn {
+    width: 100%;
+    height: 100%;
+    background: #ffda44;
+    border-radius: 10rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 18rpx;
+}
+
+.btn text {
+    font-size: 32rpx;
+    color: #333;
+}

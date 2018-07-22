@@ -1,0 +1,27 @@
+.bt-btn {
+    position: relative;
+    width: 298rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    background: #FFFFFF;
+    box-shadow: 0 0 20rpx 0 rgba(0,0,0,0.10);
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    color: #333333;
+    letter-spacing: 1.5rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bt-btn .icon {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+    display: block;
+}
+
+.bt-btn text {
+    display: block;
+    width: auto;
+}

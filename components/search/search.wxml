@@ -1,0 +1,63 @@
+<view class="search-wrapper">
+    <form bindsubmit="searchBtnSubmit" class="form" reportSubmit="{{true}}">
+        <view class="flex-wrapper">
+            <navigator bindtap="goHome" class="go-home" openType="reLaunch" url="/pages/index/index" wx:if="{{prepend}}">
+                <image class="icon" src="../../resources/img/home.png"></image>
+                <text class="text">首页</text>
+            </navigator>
+            <view class="bct search-box">
+                <input bindconfirm="confirm" bindfocus="holdFocus" bindinput="inputHandler" class="search-input" focus="{{searchFocus}}" maxlength="20" placeholder="{{placeholder}}" placeholderClass="placeholder1" value="{{searchValue}}"></input>
+            </view>
+            <button class="search-button" formType="submit" wx:if="{{append}}">搜索</button>
+        </view>
+    </form>
+    <form reportSubmit bindsubmit="reportSubmit" class="list-form">
+        <scroll-view class="sugglist" hidden="{{hidesugg||noSugg}}" scrollY="true">
+            <navigator class="nosuggword one-px-b" url="{{pageWord.path}}" wx:if="{{pageWord.through&&pageWord.through==1}}">
+                <button class="report-btn" formType="submit">
+                    <view class="relatetitle">
+              {{pageWord.name}}
+            </view>
+                    <view class="relatetext pageword-text">
+                        <text decode="{{true}}">{{pageWord.detail}}</text>
+                    </view>
+                </button>
+            </navigator>
+            <navigator class="suggword one-px-b" openType="{{openType}}" url="/{{targetPage}}?kw={{item.name}}" wx:for="{{sugg}}" wx:key="name">
+                <button class="report-btn" data-name="{{item.name}}" formType="submit">{{item.name}}</button>
+            </navigator>
+        </scroll-view>
+        <scroll-view class="sugglist search-history" hidden="{{hideHistory||noSugg}}" scrollY="true">
+            <navigator class="suggword one-px-b" openType="{{openType}}" url="/{{targetPage}}?kw={{item}}" wx:for="{{history}}" wx:key="*this">
+                <button class="report-btn" data-name="{{item}}" formType="submit">
+                    <image class="icon-history" src="/resources/img/search-history.png"></image>{{item}}</button>
+            </navigator>
+            <view bindtap="clearHistory" class="clear-history one-px-b">
+                <image class="icon-trash" src="/resources/img/search-trash.png"></image>
+                <text>清空历史记录</text>
+            </view>
+        </scroll-view>
+        <view class="sugglist empty" hidden="{{hideEmptyResult||noSugg}}">
+            <navigator class="one-px-b nosuggword" openType="{{openType}}" url="/{{targetPage}}?kw={{searchValue}}">
+                <button class="report-btn" formType="submit">
+                    <view class="relatetitle">
+              直接搜索
+            </view>
+                    <view class="relatetext">
+                        <text decode="{{true}}">{{searchValue}}&nbsp;</text>
+                        <text>的相关动图</text>
+                    </view>
+                </button>
+            </navigator>
+            <navigator class="nosuggword" openType="{{openType}}" url="/pages/magic/magic?kw={{searchValue}}">
+                <view class="relatetitle">神配图</view>
+                <view class="relatetext">
+                    <text>合成</text>
+                    <text decode="{{true}}">&nbsp;{{searchValue}}&nbsp;</text>
+                    <text>动态图</text>
+                </view>
+            </navigator>
+        </view>
+    </form>
+    <view bindtouchstart="hideAllList" class="search-mask" hidden="{{hideMask}}"></view>
+</view>

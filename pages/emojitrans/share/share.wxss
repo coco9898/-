@@ -1,0 +1,47 @@
+.container {
+    background-color: transparent;
+    text-align: center;
+}
+
+.container .img {
+    display: block;
+    width: 630rpx;
+    height: 720rpx;
+    margin: 60rpx 60rpx 30rpx;
+}
+
+.container text {
+    text-align: center;
+    color: #888;
+    font-size: 30rpx;
+}
+
+page {
+    height: auto;
+}
+
+.share-btn {
+    width: 248rpx;
+    height: 88rpx;
+    margin: 48rpx auto 0;
+    background-color: #fff;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    line-height: 88rpx;
+}
+
+.share-btn::after {
+    border: none;
+}
+
+.share-btn image {
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+}
+
+.share-btn text {
+    vertical-align: middle;
+    margin-left: 10rpx;
+    color: #333;
+}

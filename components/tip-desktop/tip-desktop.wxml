@@ -1,0 +1,14 @@
+<view bindtap="_closeMask" class="mask" wx:if="{{mask}}">
+    <view catchtap="_stopPropagation" class="content">
+        <image src="https://dl.weshineapp.com/image/tip_desktop.png"></image>
+        <view>
+            <view class="tip">
+                <text>点击右上角</text>
+                <image src="/resources/img/diandiandian.png"></image>
+                <text>处</text>
+            </view>
+            <view class="tip">添加到桌面 找图更便捷</view>
+            <view bindtap="_closeMask" class="btn">我知道了</view>
+        </view>
+    </view>
+</view>

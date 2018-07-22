@@ -1,0 +1,8 @@
+<view class="space" wx:if="{{lockShow&&!matExist}}"></view>
+<view class="list-share border" wx:if="{{lockShow}}">
+    <view class="ls-text">分享即可解锁{{lockPkgName}}表情包：</view>
+    <view class="ls-btn">
+        <view class="lsb-content lsbc-friend">好友</view>
+        <button class="ls-sharebtn" openType="share"></button>
+    </view>
+</view>

@@ -1,0 +1,10 @@
+<scroll-view bindscrolltolower="onScrollBottom" class="fansub-list-wrapper" scrollY="true">
+    <view class="inner">
+        <view bindtap="goDetail" class="item" data-id="{{item.id}}" wx:for="{{list}}">
+            <view class="inner">
+                <image mode="aspectFill" src="{{item.img_path}}"></image>
+                <view class="tit">{{item.title}}</view>
+            </view>
+        </view>
+    </view>
+</scroll-view>

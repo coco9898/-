@@ -1,0 +1,15 @@
+<template name="we-cropper">
+    <view class="canvas-wrap">
+        <canvas bindtouchend="touchEnd" bindtouchmove="touchMove" bindtouchstart="touchStart" canvasId="{{id}}" class="cropper  {{cutImage}}" disableScroll="true" style="width:{{width}}px;height:{{height}}px;"></canvas>
+    </view>
+</template>
+<view class="cropper-wrapper {{cutImage}}">
+    <template is="we-cropper" data="{{...cropperOpt}}"></template>
+    <view class="tip">您可以拖动、缩放调整图片裁剪至合适的比例</view>
+    <view class="btn-wrap">
+        <view bindtap="getCropperImage" class="btn">
+            <image src="/resources/img/cut.png"></image>
+            <text>完成</text>
+        </view>
+    </view>
+</view>

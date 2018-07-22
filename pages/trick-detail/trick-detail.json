@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "bottom-button": "../../components/bottom-button/bottom-button",
+        "search": "../../components/search/search"
+    }
+}

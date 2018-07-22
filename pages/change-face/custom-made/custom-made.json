@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "search": "/components/search/search"
+    },
+    "enablePullDownRefresh": false,
+    "navigationBarTitleText": "表情秀秀"
+}

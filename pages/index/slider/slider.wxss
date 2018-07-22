@@ -1,0 +1,24 @@
+.bannerList {
+    width: 100%;
+    display: flex;
+    background-color: transparent;
+}
+
+.bannerItem {
+    background-color: transparent;
+    padding: 0 15rpx;
+}
+
+.bannerItem:first-child {
+    padding-left: 30rpx;
+}
+
+.bannerItem:last-child {
+    padding-right: 30rpx;
+}
+
+.bannerItem image {
+    width: 240rpx;
+    height: 112rpx;
+    border-radius: 10rpx;
+}

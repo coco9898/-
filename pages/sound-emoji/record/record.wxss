@@ -1,0 +1,17 @@
+view {
+    background-color: transparent;
+}
+
+.result-wrapper {
+    height: 100%;
+    background: #fafafa;
+}
+
+.video {
+    height: 480rpx;
+}
+
+.video video {
+    height: 100%;
+    width: 100%;
+}

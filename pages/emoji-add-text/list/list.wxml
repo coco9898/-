@@ -1,0 +1,21 @@
+<scroll-view scrollY="{{true}}">
+    <search bind:submit="goToSearch" noSugg="{{true}}" openType="navigate" placeholder="搜索你想要的动作模版" prepend="{{true}}" searchHistoryKey="searchTextTemplateHistory" targetPage="pages/emoji-add-text/search-result/search-result"></search>
+    <view class="section" wx:for="{{gifList}}" wx:for-item="gifListItem" wx:key="id">
+        <view class="title-bar one-px-b">
+            <view class="title">{{gifListItem.name}}</view>
+        </view>
+        <view class="giflist">
+            <list-loading len="{{gifListItem.items.length}}" style="width:100%;"></list-loading>
+            <view class="pic lazyload" wx:for="{{gifListItem.items}}" wx:key="id">
+                <image bind:tap="goAddfont" class="pic-image" data-image-info="{{item}}" mode="{{item.w/item.h>2||item.h/item.w>2?'aspectFit':'aspectFill'}}" src="{{item.thumb_url}}">
+                    <view catch:tap="goToPkgList" class="mask gif-wrap" data-image-info="{{gifListItem}}" wx:if="{{index==8}}">
+                        <text style="font-size: 72rpx;">{{gifListItem.count}}+</text>
+                        <text>查看更多</text>
+                    </view>
+                </image>
+            </view>
+            <view class="pic placeholder"></view>
+            <view class="pic placeholder"></view>
+        </view>
+    </view>
+</scroll-view>

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "语音表情",
+    "usingComponents": {
+        "cover": "../_components/cover/cover"
+    }
+}

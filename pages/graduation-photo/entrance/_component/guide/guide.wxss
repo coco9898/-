@@ -1,0 +1,64 @@
+.guide-modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: #fff;
+    text-align: center;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+
+.guide-modal view {
+    background: transparent;
+}
+
+.guide-header {
+    margin-top: 110rpx;
+}
+
+.guide-title {
+    font-size: 68rpx;
+    line-height: 96rpx;
+}
+
+.guide-note {
+    margin-top: 10rpx;
+    font-size: 32rpx;
+    line-height: 44rpx;
+}
+
+.swipe-container {
+    margin: 50rpx auto 0;
+    width: 90%;
+    height: 603.72611465rpx;
+}
+
+.swiper-item-image {
+    display: block;
+    width: 100%;
+}
+
+.swipe-item-text {
+    margin-top: -26rpx;
+    font-size: 40rpx;
+    line-height: 56rpx;
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 938rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 290rpx;
+    font-size: 32rpx;
+    line-height: 88rpx;
+    background: #ffda44;
+    border-radius: 10rpx;
+}
+
+.close-modal-icon {
+    width: 32rpx;
+    height: 24rpx;
+}

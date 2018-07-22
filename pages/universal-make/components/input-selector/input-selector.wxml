@@ -1,0 +1,15 @@
+<view class="list">
+    <view class="item">
+        <view class="title" style="font-size:{{item.rule.length>3?'32rpx':'36rpx'}};">
+      {{item.rule}}
+    </view>
+        <view class="ipt">
+            <view class="picker-content">
+                <input bindinput="_inputChange" type="text" value="{{item.select[tapIndex]}}"></input>
+                <picker bindchange="_pickerChange" range="{{item.select}}" value="{{item.select[tapIndex]}}">
+                    <image src="/resources/img/triangle.png"></image>
+                </picker>
+            </view>
+        </view>
+    </view>
+</view>

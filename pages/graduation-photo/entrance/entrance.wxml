@@ -1,0 +1,70 @@
+<view class="entrance-info">
+    <v-guide active="{{!hideGuide}}" catch:closeGuideModal="closeGuideModal" swipeList="{{swipeList}}"></v-guide>
+    <view class="entrance-header flex">
+        <navigator class="entrance-header-item flex-item-1 flex flex-middle flex-center" openType="reLaunch" url="/pages/index/index">
+            <image class="entrance-header-icon" src="/resources/img/home.png"></image>
+            <text>闪萌表情</text>
+        </navigator>
+        <navigator class="entrance-header-item flex-item-1 flex flex-center flex-middle" openType="navigate" url="../album/album">
+            <image class="entrance-header-icon" src="/resources/img/more.png"></image>
+            <text>查看所有合照</text>
+        </navigator>
+    </view>
+    <view class="entrance-bg">
+        <image class="entrance-bg-image" src="{{background}}"></image>
+        <view bindtap="bannerTap" class="entrance-banner">
+            <open-data lang="zh_CN" type="userNickName" wx:if="{{!content}}"></open-data>
+            <text>{{content||'和小伙伴们'}}</text>
+        </view>
+        <image class="banner-bg" src="https://dl.weshineapp.com/nielian/background/henfu.png" wx:if="{{uploadRes}}"></image>
+        <image class="image-item" data-id="{{item.uid}}" data-index="{{index}}" src="/resources/img/empty_shape.png" style="top:{{item.y*2}}rpx;left:{{item.x*2}}rpx;width:{{w*2}}rpx;height:{{h*2}}rpx" wx:if="{{seatArr.length}}" wx:for="{{seatArr}}"></image>
+        <music audioOff="/resources/img/music-pause-school.png" audioOn="/resources/img/music-play-school.png" id="music-component" music="{{bgMusic}}" position="right:20rpx;bottom:20rpx;width: 64rpx;height: 64rpx;" rotate="{{false}}"></music>
+    </view>
+    <scroll-view class="entrance-detail" scrollTop="{{scrollTop}}" scrollY="true" style="height:{{scrollHeight}}rpx;">
+        <view class="blank"></view>
+        <view class="entrance-section flex">
+            <view class="entrance-title">横幅内容</view>
+            <view class="flex-item-1">
+                <input bindinput="inputEvent" data-key="content" focus="{{contentFocus}}" maxlength="{{wordsLimit+1}}" placeholder="{{titlePlaceholder||'请输入横幅内容'}}" placeholderStyle="color:#BBB;" type="text" value="{{content}}"></input>
+                <text class="entrance-note">例：桃园5-404宿舍合影、美少女壮士吃鸡组、高三2班毕业留念、精致的猪猪女孩们</text>
+            </view>
+        </view>
+        <view class="entrance-section flex">
+            <view class="entrance-title">合照人数</view>
+            <picker bindchange="chooseNum" class="flex-item-1" range="{{numArr}}" value="{{index}}">
+                <view class="picker" style="color:{{pickerChange?'#333':'#BBB'}};">{{num}}</view>
+            </picker>
+        </view>
+        <view class="entrance-section flex">
+            <view class="entrance-title background-entrance-title">合照背景</view>
+            <view class="flex-item-1">
+                <view class="bg-wrap">
+                    <view class="upload flex bg-item {{backgroundId==-1?'selected':''}}" data-value="-1">
+                        <image class="upload-icon" src="/resources/img/upload-entrance.png" wx:if="{{!uploadRes}}"></image>
+                        <image mode="aspectFill" src="{{trimedImg}}" wx:if="{{uploadRes}}"></image>
+                        <view class="upload-text {{uploadRes?'mask':''}}" style="color:{{uploadRes?'#fff':'#333'}};">
+                            <view>自定义</view>
+                            <view>背景</view>
+                        </view>
+                        <upload bindupdatelist="receiveUploadedPath" class="upload-components" item="{{trimConfig}}" options="{{['拍摄照片','上传照片']}}" previewShow="false" trimed="{{trimedImg}}" uploadUrl="{{uploadUrl}}" wrapClass="wrap-cover"></upload>
+                    </view>
+                    <view bindtap="chooseBackground" class="bg-item" data-value="{{index}}" wx:for="{{backgroundList}}" wx:key="id">
+                        <image mode="aspectFill" src="{{item.thumbnail_url}}"></image>
+                        <view class="mask {{backgroundId==item.id?'selected':''}}">{{item.title}}</view>
+                    </view>
+                    <view class="bg-item placeholder"></view>
+                    <view class="bg-item placeholder"></view>
+                </view>
+                <text class="entrance-note">以上信息创建后不支持修改哦</text>
+            </view>
+        </view>
+        <view class="blank"></view>
+    </scroll-view>
+    <view bindtap="create" class="btn-wrap">
+        <view class="btn">
+            <text>发起合照</text>
+        </view>
+    </view>
+    <button bindgetuserinfo="getUserInfo" class="auth-btn btn-wrap" openType="getUserInfo" wx:if="{{!openid}}"></button>
+</view>
+<canvas canvasId="myCanvas" style="position:fixed;left:-10000px;top:-10000px;width:1050px;height:700px;"></canvas>

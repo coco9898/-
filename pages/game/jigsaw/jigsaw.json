@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "拼图",
+    "usingComponents": {
+        "v-upload": "/pages/universal-make/components/upload/upload"
+    }
+}

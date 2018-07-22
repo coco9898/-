@@ -1,0 +1,91 @@
+.list {
+    width: 100%;
+    padding: 20rpx 20rpx 0;
+    box-sizing: border-box;
+}
+
+.list scroll-view {
+    height: 100%;
+}
+
+.list .item {
+    height: 88rpx;
+    display: flex;
+    margin-bottom: 20rpx;
+}
+
+.list .item:last-child {
+    margin-bottom: 0;
+}
+
+.list .item .img {
+    height: 100%;
+    width: 132rpx;
+    margin-right: 20rpx;
+}
+
+.list .item .title {
+    height: 100%;
+    min-width: 132rpx;
+    margin-right: 20rpx;
+    line-height: 88rpx;
+    font-size: 36rpx;
+    color: #888;
+    text-align: right;
+}
+
+.list .item .img image {
+    height: 100%;
+    width: 100%;
+}
+
+.list .item .ipt {
+    flex-grow: 1;
+    background: #fff;
+    border-radius: 10rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.picker-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 40rpx;
+}
+
+.list .item .ipt text {
+    font-size: 32rpx;
+    color: #333;
+    margin-right: 10rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list .item .ipt input {
+    height: 100%;
+    flex-grow: 1;
+    display: block;
+}
+
+.list .item .ipt picker {
+    height: 100%;
+    width: 88rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list .item .ipt image {
+    width: 25rpx;
+    height: 20rpx;
+}

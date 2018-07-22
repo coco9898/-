@@ -1,0 +1,26 @@
+<view bindtap="_closeGuide" class="mask mask-opacity" wx:if="{{show=='processing-image'}}">
+    <view class="mask mask-down">
+        <view class="processing-image">
+            <image class="example" src="https://dl.weshineapp.com/gif/20180608/1528429267_5b19fad33815c.png"></image>
+            <image class="arrow" src="/resources/img/arrow2.png"></image>
+            <image class="hand" src="/resources/img/hand2.png"></image>
+            <view class="tip">
+                <view>初始形象不够酷炫？</view>
+                <view>点击DIY你的个人形象</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="_closeGuide" class="mask mask-down" wx:if="{{show=='processing-share'}}">
+    <view class="processing-share">
+        <image class="example" src="https://dl.weshineapp.com/gif/20180608/1528429894_5b19fd46a1bde.png">
+            <button class="share-btn" openType="share"></button>
+        </image>
+        <image class="arrow" src="/resources/img/arrow2.png"></image>
+        <image class="hand" src="/resources/img/hand2.png"></image>
+        <view class="tip">
+            <view>别忘了邀请心中的TA</view>
+            <view>加入你的合照哟</view>
+        </view>
+    </view>
+</view>

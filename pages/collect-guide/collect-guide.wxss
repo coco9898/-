@@ -1,0 +1,21 @@
+.collect-guide-wrapper {
+    color: #666;
+    font-size: 32rpx;
+    line-height: 44rpx;
+    letter-spacing: 0.8rpx;
+    padding-top: 34rpx;
+    background-color: transparent;
+}
+
+.collect-guide-wrapper .steptext {
+    width: 630rpx;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.collect-guide-wrapper .stepimg {
+    display: block;
+    width: 468rpx;
+    margin: 20rpx auto 35rpx;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1);
+}

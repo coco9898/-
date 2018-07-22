@@ -1,0 +1,17 @@
+<view class="list-trick">
+    <search prepend pagePath="{{pagePath}}" wx:if="{{pageOptions.from==='share'}}"></search>
+    <navigator bindtap="pingbackTricks" class="list-trick__item lazyload one-px-b" data-id="{{item.id}}" url="../trick-detail/trick-detail?trickid={{item.id}}&title={{item.name}}&from=list" wx:for="{{tricksData.data}}" wx:key="id">
+        <image class="image" mode="aspectFill" src="{{item.img}}"></image>
+        <view class="text">
+            <view class="trick-name">{{item.name}}</view>
+            <view class="trick-desc">{{item.desc}}</view>
+        </view>
+    </navigator>
+    <view class="bottom-btn-wrapper">
+        <bottom-button bindtap="goColletGuide" class="collectguide" icon="../../resources/img/icon-collect-btn.png">悄悄收藏备用</bottom-button>
+        <view class="share-btn-wrapper">
+            <bottom-button icon="../../resources/img/share.png">偷偷告诉基友</bottom-button>
+            <button bindtap="pingbackShareList" class="sharebtn" openType="share"></button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,3 @@
+<view bindtap="goDetail" class="section" data-id="{{item.id}}" wx:for="{{worksList}}" wx:key="{{ index }}">
+    <cover item="{{item}}"></cover>
+</view>

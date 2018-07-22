@@ -1,0 +1,12 @@
+<view class="trick-detail">
+    <search prepend pagePath="{{pagePath}}" wx:if="{{pageOption.from==='share'}}"></search>
+    <image bindtap="toDownload" mode="widthFix" src="{{emojiDetail.url}}"></image>
+    <image bindtap="toDownload" mode="widthFix" src="{{emojiDetail.share_img}}" wx:if="{{emojiDetail.share_status}}"></image>
+    <view class="bottom-btn-wrapper">
+        <bottom-button bindtap="toDownload" class="downloademoji" icon="../../resources/img/save.png">下载相关表情</bottom-button>
+        <view class="share-btn-wrapper">
+            <bottom-button icon="../../resources/img/share.png">分享这个套路</bottom-button>
+            <button class="sharebtn" openType="share"></button>
+        </view>
+    </view>
+</view>

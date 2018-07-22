@@ -1,0 +1,25 @@
+<view class="main-img">
+    <image mode="aspectFit" src="{{image}}" wx:if="{{image}}"></image>
+    <image class="loading" src="https://dl.weshineapp.com/misc/newloading.gif" wx:if="{{!image}}"></image>
+</view>
+<block wx:if="{{actionList.length}}">
+    <view wx:for="{{actionList}}" wx:key="param_id">
+        <input-box bindupdatelist="updateList" index="{{index}}" item="{{item}}" type="image-input" wx:if="{{item.type==1}}"></input-box>
+        <input-box bindupdatelist="updateList" index="{{index}}" item="{{item}}" type="text-input" wx:if="{{item.type==2}}"></input-box>
+        <upload bindupdatelist="updateList" index="{{index}}" item="{{item}}" trimed="{{trimedImg}}" type="image-btn" wx:if="{{item.type==5}}"></upload>
+        <upload bindupdatelist="updateList" index="{{index}}" item="{{item}}" trimed="{{trimedImg}}" type="text-btn" wx:if="{{item.type==3}}"></upload>
+        <selector bindupdatelist="updateList" index="{{index}}" item="{{item}}" type="image-select" wx:if="{{item.type==6}}"></selector>
+        <selector bindupdatelist="updateList" index="{{index}}" item="{{item}}" type="text-select" wx:if="{{item.type==4}}"></selector>
+        <view class="input-selector" wx:if="{{item.type==7}}">
+            <view class="tip">点击▼更换文字，上传正面照效果更好</view>
+            <input-selector bindupdatelist="updateList" index="{{index}}" item="{{item}}"></input-selector>
+        </view>
+    </view>
+</block>
+<view class="btn-wrap" wx:if="{{actionList.length}}">
+    <view bindtap="create" class="create-btn">
+        <image src="/resources/img/create.png"></image>
+        <text>立刻合成</text>
+    </view>
+</view>
+<music id="music-component" music="{{bgMusic}}"></music>

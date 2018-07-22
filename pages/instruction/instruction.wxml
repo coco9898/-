@@ -1,0 +1,19 @@
+<view class="collect-guide-wrapper">
+    <view class="steptext">1、如需保存或发送，请先长按表情。</view>
+    <image class="stepimg stepimg-first" mode="widthFix" src="https://dl.weshineapp.com/misc/mp_emoticon/instruction1.png"></image>
+    <view class="steptext">2、选择「发送给朋友」或「保存图片」。</view>
+    <image class="stepimg" mode="widthFix" src="https://dl.weshineapp.com/misc/mp_emoticon/instruction2.png"></image>
+    <view class="steptext">3、如需收藏到微信表情收藏夹，发送给好友后，在聊天界面长按表情即可。</view>
+    <image class="stepimg" mode="widthFix" src="https://dl.weshineapp.com/image/wx_collect.png"></image>
+    <view class="steptext">4、如需收藏，请点击表情包下方的收藏</view>
+    <image class="stepimg" mode="widthFix" src="https://dl.weshineapp.com/misc/mp_emoticon/instruction3.png"></image>
+    <view class="steptext">5、表情将会收藏到您闪萌首页底部的表情收藏夹。</view>
+    <image class="stepimg" mode="widthFix" src="https://dl.weshineapp.com/misc/mp_emoticon/instruction4.png"></image>
+    <view class="steptext">6.在微信聊天列表下拉，即可找到闪萌表情</view>
+    <image class="stepimg" mode="widthFix" src="https://dl.weshineapp.com/misc/collect-guide1.gif?v=1"></image>
+    <view class="steptext">7.关注「闪萌表情」的公众号，通过菜单栏可以随时打开小程序</view>
+    <image class="stepimg" mode="widthFix" src="https://dl.weshineapp.com/misc/collect-guide2.gif?v=1"></image>
+    <view class="steptext">8.「闪萌表情」的公众号会给你推送最火最新的套路表情包</view>
+    <image class="stepimg" mode="widthFix" src="https://dl.weshineapp.com/misc/collect-guide3.jpeg"></image>
+    <view bindtap="goBack" class="btn">我知道了</view>
+</view>

@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "常见问题",
+    "usingComponents": {
+        "v-collapse": "/pages/assistant/collapse/collapse"
+    }
+}

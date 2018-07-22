@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "世界杯爆炸头",
+    "usingComponents": {
+        "upload": "/pages/universal-make/components/upload/upload"
+    },
+    "disableScroll": true
+}

@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "创建合照",
+    "usingComponents": {
+        "music": "/components/music/music",
+        "upload": "/pages/universal-make/components/upload/upload",
+        "v-guide": "/pages/graduation-photo/entrance/_component/guide/guide"
+    }
+}

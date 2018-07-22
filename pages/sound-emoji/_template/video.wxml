@@ -1,0 +1,5 @@
+<template name="tVideo">
+    <view class="video">
+        <video autoplay="{{autoplay}}" controls="{{false}}" enableProgressGesture="{{false}}" id="{{id}}" loop="{{true}}" muted="{{muted}}" objectFit="contain" showCenterPlayBtn="{{false}}" src="{{src}}"></video>
+    </view>
+</template>

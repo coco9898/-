@@ -1,0 +1,69 @@
+<view>
+    <view bind:tap="selectPerson" class="photo-container">
+        <image class="photo-container-image" src="{{compound_url}}"></image>
+        <block wx:for="{{seatArr}}" wx:key="seat_num">
+            <view class="image-item-container" style="top:{{positionArr[index].y*2||-99999}}rpx;left:{{positionArr[index].x*2||-99999}}rpx;width:{{w*2}}rpx;height:{{h*2}}rpx" wx:if="{{item.figure_url}}">
+                <image class="image-item" src="{{item.figure_url}}"></image>
+                <block wx:if="{{showInfoIndex==index}}">
+                    <view class="display-userinfo flex" style="right: {{positionArr[index].x>188?(w*2-w1*2)/2+w1/2+10-25+'rpx':''}};left: {{positionArr[index].x<188?w-30+'rpx':''}}">
+                        <image class="display-userinfo-avatar" src="{{item.avatar}}"></image>
+                        <text>{{item.nickname}}</text>
+                    </view>
+                    <i class="arrow"></i>
+                    <i class="arrow-behind"></i>
+                </block>
+                <image class="position-point" src="/resources/img/point.gif" wx:if="{{index===selfIndex||clickIndex==index}}"></image>
+            </view>
+            <view class="image-item-container" style="top:{{positionArr[index].y*2||-9999}}rpx;left:{{positionArr[index].x*2||-9999}}rpx;width:{{w*2}}rpx;height:{{h*2}}rpx" wx:else>
+                <image class="image-item" src="/resources/img/empty_shape.png"></image>
+                <image class="position-point" src="/resources/img/point.gif" wx:if="{{index===selfIndex||clickIndex==index}}"></image>
+            </view>
+        </block>
+        <button bindtap="shareAirTap" class="share-btn btn" openType="share" wx:if="{{shareAir}}">
+            <image class="share-air" src="https://dl.weshineapp.com/gif/20180608/1528430513_5b19ffb1c0006.png"></image>
+        </button>
+        <image catch:tap="drawThumbnail" class="refresh-btn" src="/resources/img/fresh.png"></image>
+        <music audioOff="/resources/img/music-pause-school.png" audioOn="/resources/img/music-play-school.png" id="music-component" music="{{music_url}}" position="right:20rpx;bottom:20rpx;width:64rpx;height:64rpx;" rotate="{{false}}"></music>
+    </view>
+    <view class="block-section">
+        <view class="btn-container">
+            <button bindgetuserinfo="getUserInfo" class="btn btn-auth edit-personal-btn" openType="getUserInfo" wx:if="{{!openid}}"></button>
+            <button bind:tap="editPersonalShape" class="btn btn-primary edit-personal-btn flex flex-center flex-middle {{selfIndex>-1?'':'disabled'}}">
+                <image class="edit-personal-icon" src="/resources/img/edit_personal_shape.png"></image>定制我的形象
+            </button>
+        </view>
+        <view class="operation-note">请选择一个位置，并定制你的形象</view>
+        <view class="operation-btn flex">
+            <button bind:tap="tapSaveButton" class="btn flex-item-1 flex flex-middle flex-center {{seatArr.length==lack_num?'disabled':''}}" disabled="{{seatArr.length==lack_num?true:false}}">
+                <image class="operation-btn-icon" src="/resources/img/save.png"></image>
+                <text>保存到手机相册</text>
+            </button>
+            <button class="btn flex-item-1 flex flex-center flex-middle" openType="share">
+                <image class="operation-btn-icon" src="/resources/img/share.png"></image>
+                <text>{{lack_num?'邀请好友加入':'分享合照给好友'}}</text>
+            </button>
+        </view>
+        <view class="operation-note">还剩 <em>{{lack_num}}</em> 个空位，
+            <a bind:tap="goMemberDetail" class="opeartion-link">查看现有名单</a>
+            <image src="/resources/img/arrow-right.png"></image>
+        </view>
+        <view class="operation-btn footer-btn flex flex-center">
+            <navigator class="btn flex flex-middle flex-center" openType="reLaunch" url="/pages/index/index">
+                <image class="operation-btn-icon" src="/resources/img/home_gray.png"></image>
+                <text>闪萌表情</text>
+            </navigator>
+            <navigator class="btn flex flex-center flex-middle" url="/pages/graduation-photo/album/album">
+                <image class="operation-btn-icon" src="/resources/img/menu_gray.png"></image>
+                <text>查看所有合照</text>
+            </navigator>
+            <navigator class="btn flex flex-center flex-middle" openType="navigate" url="/pages/graduation-photo/entrance/entrance?refer=preview">
+                <image class="operation-btn-icon" src="/resources/img/create_photo.png"></image>
+                <text>创建新合照</text>
+            </navigator>
+        </view>
+    </view>
+    <canvas canvasId="graduationPhoto" class="canvas primary-canvas"></canvas>
+    <canvas canvasId="thumbnailPhoto" class="canvas thumbnail-canvas"></canvas>
+    <canvas canvasId="posterPhoto" class="canvas poster-canvas"></canvas>
+    <step-guide bind:closeModal="closeModal" hidden="{{!stepName}}" step="{{stepName}}"></step-guide>
+</view>

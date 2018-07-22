@@ -1,0 +1,17 @@
+<import src="../_template/video.wxml"></import>
+<view class="share-wrapper">
+    <view class="mb-20">
+        <template is="tVideo" data="{{id:videoId,autoplay:true,src:video,muted:false}}"></template>
+    </view>
+    <v-message hideTime="{{true}}" type="voice" user="{{user}}"></v-message>
+    <view class="btns">
+        <view bindtap="rebuild" class="rebuild btn">
+            <image class="icon" src="../../../resources/img/onemore@3x.png"></image>
+            <view class="text">重新录制</view>
+        </view>
+        <button class="share btn" openType="share">
+            <image class="icon" src="../../../resources/img/share.png"></image>
+            <view class="text">分享给好友</view>
+        </button>
+    </view>
+</view>

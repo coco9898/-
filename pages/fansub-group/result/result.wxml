@@ -1,0 +1,17 @@
+<view class="result-wrapper">
+    <view class="main-img">
+        <image mode="aspectFit" src="{{image}}"></image>
+    </view>
+    <view class="btns">
+        <view class="btn">
+            <image mode="aspectFit" src="/resources/img/share.png"></image>
+            <text>分享给好友</text>
+            <button openType="share"></button>
+        </view>
+        <view bindtap="toDownload" class="btn">
+            <image mode="aspectFit" src="/resources/img/save.png"></image>
+            <text>保存到相册</text>
+        </view>
+    </view>
+    <share-guide id="share-component" imgSrc="{{image}}"></share-guide>
+</view>

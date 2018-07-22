@@ -1,0 +1,8 @@
+<view class="collect-guide-wrapper">
+    <view class="steptext">1.在微信聊天列表下拉，即可找到闪萌表情</view>
+    <image class="stepimg" mode="widthFix" src="https://dl.weshineapp.com/misc/collect-guide1.gif?v=1"></image>
+    <view class="steptext">2.关注「闪萌表情」的公众号，通过菜单栏可以随时打开小程序</view>
+    <image class="stepimg" mode="widthFix" src="https://dl.weshineapp.com/misc/collect-guide2.gif?v=1"></image>
+    <view class="steptext">3.「闪萌表情」的公众号会给你推送最火最新的套路表情包</view>
+    <image class="stepimg" mode="widthFix" src="https://dl.weshineapp.com/misc/collect-guide3.jpeg"></image>
+</view>

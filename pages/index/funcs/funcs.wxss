@@ -1,0 +1,22 @@
+.bannerList {
+    box-sizing: border-box;
+    padding: 0 30rpx 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bannerItem {
+    padding-top: 30rpx;
+    text-align: center;
+}
+
+.bannerItem image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.bannerItem .text {
+    font-size: 28rpx;
+    color: #888;
+}

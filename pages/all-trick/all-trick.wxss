@@ -1,0 +1,70 @@
+.list-trick {
+    overflow: hidden;
+    padding-bottom: 132rpx;
+    background-color: #fff;
+}
+
+.list-trick__item {
+    display: flex;
+    height: 160rpx;
+    padding: 20rpx;
+    line-height: 1;
+    position: relative;
+    background-color: #fff;
+}
+
+.list-trick__item .image {
+    width: 160rpx;
+    height: 160rpx;
+}
+
+.list-trick__item .text {
+    flex: 1;
+    margin-left: 20rpx;
+}
+
+.list-trick__item .trick-name {
+    font-size: 36rpx;
+    color: #333;
+}
+
+.list-trick__item .trick-desc {
+    font-size: 28rpx;
+    color: #bbb;
+    margin-top: 10rpx;
+    line-height: 1.5;
+}
+
+.bottom-btn-wrapper {
+    position: fixed;
+    bottom: 34rpx;
+    left: 0;
+    right: 0;
+    height: 88rpx;
+    z-index: 1;
+    background: transparent;
+    display: flex;
+}
+
+.share-btn-wrapper {
+    position: relative;
+}
+
+.share-btn-wrapper .sharebtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    z-index: 1;
+    border-color: transparent;
+}
+
+.sharebtn::after {
+    border: none;
+}
+
+.collectguide {
+    margin: 0 54rpx 0 50rpx;
+}

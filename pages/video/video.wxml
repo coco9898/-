@@ -1,0 +1,3 @@
+<view class="video-wrapper">
+    <video autoplay="{{true}}" bindended="videoPlayEnd" id="emojiVideo" src="{{video}}"></video>
+</view>

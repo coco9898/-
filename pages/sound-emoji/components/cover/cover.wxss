@@ -1,0 +1,76 @@
+.wrap {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.video {
+    width: 100%;
+    height: 480rpx;
+    position: relative;
+    font-size: 0;
+    background: #000;
+}
+
+.video .cover {
+    width: 100%;
+    height: 100%;
+}
+
+.video .play-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.menu {
+    width: 100%;
+    padding: 18rpx 30rpx;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0;
+    box-sizing: border-box;
+}
+
+.menu .item {
+    height: 64rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32rpx;
+}
+
+.menu .msg image {
+    margin-right: 10rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.menu .msg text {
+    color: #333;
+    min-width: 62rpx;
+}
+
+.menu .item .border {
+    margin-right: 30rpx;
+}
+
+.menu .userinfo image {
+    width: 64rpx;
+    height: 64rpx;
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+    margin-right: 20rpx;
+    background: #F2F2F2;
+}
+
+.menu .userinfo text {
+    color: #666;
+    max-width: 322rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

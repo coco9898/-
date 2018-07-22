@@ -1,0 +1,8 @@
+<view class="bannerWrapper">
+    <view class="bannerList">
+        <view bindtap="tapBanner" class="bannerItem" data-index="{{index}}" style="width:{{itemWidth}}" wx:if="{{item}}" wx:for="{{list}}">
+            <image mode="aspectFit" src="{{item.img}}"></image>
+            <view class="text">{{item.name}}</view>
+        </view>
+    </view>
+</view>

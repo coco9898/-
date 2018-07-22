@@ -1,0 +1,67 @@
+.section {
+    margin-bottom: 20rpx;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.titlebar {
+    display: flex;
+    border: none;
+    color: #222;
+    text-indent: 0;
+    padding: 20rpx 0;
+    margin: 0 20rpx;
+    position: relative;
+    height: 44rpx;
+    align-items: center;
+}
+
+.titlebar .title {
+    flex: 1;
+    font-size: 34rpx;
+    background-size: 34rpx 34rpx;
+}
+
+.titlebar image {
+    margin-right: 13rpx;
+    width: 38rpx;
+    height: 38rpx;
+}
+
+.icon-wrap {
+    width: 100%;
+    padding: 40rpx 40rpx 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.icon-wrap .item {
+    text-align: center;
+    margin-bottom: 40rpx;
+    font-size: 0;
+}
+
+.icon-wrap .item .icon {
+    width: 204rpx;
+    height: 204rpx;
+    margin-bottom: 10rpx;
+    overflow: hidden;
+}
+
+.icon-wrap .item .icon image {
+    width: 100%;
+    height: 100%;
+}
+
+.icon-wrap .item text {
+    font-size: 32rpx;
+    color: #1E1E1E;
+}
+
+.list-wrap {
+    background-color: transparent;
+}

@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "图片详情",
+    "usingComponents": {
+        "search": "/components/search/search",
+        "bottom-unlock": "/components/bottom-unlock/bottom-unlock",
+        "list-loading": "/components/list-loading/list-loading",
+        "share-guide": "/components/share-guide/share-guide",
+        "ad-link": "/components/ad-link/ad-link",
+        "pkg-link": "/components/pkg-link/pkg-link",
+        "desktop-tip": "/components/tip-desktop/tip-desktop"
+    }
+}

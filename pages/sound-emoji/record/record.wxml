@@ -1,0 +1,5 @@
+<import src="../_template/video.wxml"></import>
+<view class="result-wrapper">
+    <template is="tVideo" data="{{id:videoId,autoplay:false,src:video,muted:true}}"></template>
+    <v-record backgroundUrl="{{state===0?normalBtn:pressBtn}}" bind:startRecord="startRecord" bind:startUpload="startUpload" totalDuration="{{totalDuration}}"></v-record>
+</view>

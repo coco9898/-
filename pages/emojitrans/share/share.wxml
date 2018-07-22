@@ -1,0 +1,8 @@
+<view class="container">
+    <image bindtap="tapImage" class="img" src="{{imgSrc}}"></image>
+    <text>图片已成功保存到您的相册</text>
+    <button class="share-btn" openType="share">
+        <image class="icon" src="/resources/img/share.png"></image>
+        <text>直接分享</text>
+    </button>
+</view>

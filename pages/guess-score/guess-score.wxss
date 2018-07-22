@@ -1,0 +1,161 @@
+.top-bg {
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+}
+
+.top-bg .bg {
+    width: 100%;
+}
+
+.top-bg .avatar {
+    width: 190rpx;
+    height: 190rpx;
+    border: 6rpx solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 64rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.game-list {
+    padding: 0 20rpx;
+    transform: translateY(-120rpx);
+    background-color: transparent;
+}
+
+.game-list .tip {
+    text-align: center;
+    background-color: transparent;
+    font-size: 24rpx;
+    color: #fff;
+    text-shadow: 0 4rpx 8rpx rgba(0,0,0,0.2);
+    transform: translateY(-14rpx);
+}
+
+.game-list .game-item {
+    position: relative;
+    width: 710rpx;
+    height: 528rpx;
+    box-shadow: 0 4rpx 20rpx 0 rgba(0,0,0,0.1);
+    border-radius: 10rpx;
+    margin-bottom: 20rpx;
+    overflow: hidden;
+}
+
+.game-item .time {
+    font-size: 28rpx;
+    line-height: 28rpx;
+    color: #888;
+    text-align: center;
+    margin: 30rpx 0 40rpx 0;
+}
+
+.game-item .reward {
+    width: 56rpx;
+    height: 60rpx;
+    position: absolute;
+    top: 0;
+    right: 28rpx;
+}
+
+.game-item .teams {
+    display: flex;
+    width: 604rpx;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.game-item .teams view {
+    text-align: center;
+}
+
+.game-item .team {
+    font-size: 32rpx;
+    color: #333;
+    white-space: nowrap;
+    overflow: visible;
+    width: 158rpx;
+}
+
+.teams .team image {
+    display: block;
+    margin: 0 auto 10rpx auto;
+    width: 96rpx;
+    height: 72rpx;
+    background-color: aqua;
+    text-align: center;
+}
+
+.teams .vs {
+    width: 200rpx;
+    font-size: 28rpx;
+    color: #bbb;
+}
+
+.teams .vs image {
+    display: block;
+    width: 86rpx;
+    height: 52rpx;
+    margin: 10rpx auto 22rpx auto;
+}
+
+.scores {
+    display: flex;
+    width: 590rpx;
+    margin: 0 auto 0 auto;
+    padding: 20rpx 0;
+    font-size: 112rpx;
+    color: #333;
+}
+
+.scores .score {
+    display: block;
+    width: 184rpx;
+    height: 140rpx;
+    border: 1px solid #eee;
+    border-radius: 10rpx;
+    text-align: center;
+}
+
+.scores .score.default {
+    font-size: 28rpx;
+    width: 182rpx;
+    height: 138rpx;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(1px,-140rpx);
+    border: none;
+    position: absolute;
+}
+
+.scores .bi {
+    flex: 1;
+}
+
+.bi image {
+    display: block;
+    width: 20rpx;
+    height: 80rpx;
+    margin: 30rpx auto;
+}
+
+.c-btn-wrap {
+    background-color: #fff;
+    height: 120rpx;
+    line-height: 120rpx;
+    font-size: 32rpx;
+    color: #333;
+    text-align: center;
+    flex: 1;
+}
+
+.btns {
+    border-top: 1rpx solid #eee;
+}

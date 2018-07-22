@@ -1,0 +1,48 @@
+<view class="image-wrap">
+    <view class="image-area">
+        <image src="{{srcData[item.type].list[srcData[item.type].current].material_url}}" style="z-index: {{srcData[item.type].zIndex}}" wx:for="{{types}}" wx:key="type"></image>
+    </view>
+    <view class="info">
+        <view class="name">
+            <input bindinput="setNickname" maxlength="10" placeholder="昵称" placeholderStyle="color: #1e1e1e;" value="{{nickname}}"></input>
+        </view>
+        <view class="gender">
+            <view bindtap="switchGender" class="select male">
+                <view class="male {{sex===1?'active':''}} select-item">男</view>
+                <view class="female {{sex===2?'active':''}} select-item">女</view>
+            </view>
+        </view>
+        <view class="checkbox-save">
+            <checkbox-group bindchange="checkboxChange">
+                <label class="checkbox">
+                    <checkbox checked="{{true}}" value="1"></checkbox>
+                    <text>本地相册</text>
+                </label>
+            </checkbox-group>
+        </view>
+    </view>
+</view>
+<view class="bt-wrap">
+    <view class="select-styles">
+        <scroll-view scrollX class="select-type">
+            <view bindtap="selectType" class="type {{curIndex===index?'active':''}}" data-index="{{index}}" wx:for="{{types}}" wx:key="type">
+                <image class="icon" src="{{item.src}}"></image>
+                <text class="content">{{item.content}}</text>
+            </view>
+        </scroll-view>
+    </view>
+    <scroll-view scrollY class="styles-wrap" scrollTop="{{scrollTop}}">
+        <view style="padding: 22rpx 0 22rpx 19rpx">
+            <view bindtap="selectItem" class="style-item {{srcData[curType].current==index?'active':''}}" data-index="{{index}}" wx:for="{{srcData[curType].list}}" wx:key="id">
+                <image lazyLoad="{{true}}" mode="aspectFit" src="{{item.thumbnail}}"></image>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="btn-wrap">
+        <view bindtap="confirm" class="btn">
+            <image class="icon" src="/resources/img/edit_personal_shape.png"></image>
+            <text>保存我的形象</text>
+        </view>
+    </view>
+</view>
+<canvas canvasId="canvas" style="position:fixed;top: 0;left: -10000px;width:{{canvasW}}px;height:{{canvasH}}px;"></canvas>

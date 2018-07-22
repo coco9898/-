@@ -1,0 +1,104 @@
+<template name="q&a">
+    <block wx:if="{{index==0}}">
+        <text>您可以选择如下两种方法
+ 1.如果最近您有使用过闪萌表情小程序，首页微信下拉，即可找到</text>
+        <image class="class=\"collapse-detail-img\"" mode="aspectFit" src="http://mb-pic.oss-cn-beijing.aliyuncs.com/misc/mp_wxapp/20180517/1.gif"></image>
+        <text>2.安卓用户可以用如下方式将小程序添加到手机桌面。</text>
+        <image class="class=\"collapse-detail-img\"" mode="aspectFit" src="http://mb-pic.oss-cn-beijing.aliyuncs.com/misc/mp_wxapp/20180517/2.gif"></image>
+    </block>
+    <block wx:elif="{{index==1}}">
+        <view>目前闪萌表情小程序的图仅支持一张一张保存，找到你喜欢的图，点击进入「图片详情」页面，点击页面中部「保存表情」按钮<image class="icon" mode="aspectFit" src="/resources/img/save.png"></image>即可（苹果手机用户还需在进入的页面长按屏幕，点击“保存图片”），目前只支持保存至手机相册。</view>
+        <image class="class=\"collapse-detail-img\"" mode="aspectFit" src="http://mb-pic.oss-cn-beijing.aliyuncs.com/misc/mp_wxapp/20180517/3.gif"></image>
+    </block>
+    <block wx:elif="{{index==3}}">
+        <text>可点击「图片详情」页中的「上一张/下一张」按钮</text>
+        <image class="icon\"" mode="aspectFit" src="/resources/img/pre.png"></image>
+        <image class="icon\"" mode="aspectFit" src="/resources/img/next.png"></image>
+    </block>
+    <text wx:elif="{{index==5}}">您可以选择如下两种方法
+1.添加到微信的表情收藏里
+2.通过照片发送给朋友</text>
+    <block wx:elif="{{index==6}}">
+        <view>您可以选择如下两种方法</view>
+        <view>1.通过照片发送给自己或者他人，然后手动添加到表情。</view>
+        <view>2.在微信表情收藏中添加表情。</view>
+        <image class="class=\"collapse-detail-img\"" mode="aspectFit" src="http://mb-pic.oss-cn-beijing.aliyuncs.com/misc/mp_wxapp/20180517/4.png"></image>
+    </block>
+    <block wx:elif="{{index==7}}">
+        <view>在闪萌表情小程序中，找到想要发送给朋友的图，点击该图进入「图片详情页」，点击页面中部「分享表情」按钮<image class="icon" mode="aspectFit" src="/resources/img/share.png"></image>然后长按屏幕，点击“发送给朋友”即可。</view>
+        <image class="class=\"collapse-detail-img\"" mode="aspectFit" src="http://mb-pic.oss-cn-beijing.aliyuncs.com/misc/mp_wxapp/20180517/5.gif"></image>
+    </block>
+    <block wx:elif="{{index==8}}">
+        <view>您可以选择如下两种方法</view>
+        <view>1.闪萌表情小程序首页搜索框，输入你的搜索词，便可搜索。如果结果不理想，可以多尝试几个搜索词，或者两个搜索词组合搜索。</view>
+        <image class="class=\"collapse-detail-img\"" mode="aspectFit" src="http://mb-pic.oss-cn-beijing.aliyuncs.com/misc/mp_wxapp/20180517/6.gif"></image>
+        <text>2.小程序首页「热门表情包」版块会及时更新全网最火表情，可找到最新最火的表情（抖音来的朋友可多关注这里）。</text>
+    </block>
+    <block wx:elif="{{index==10}}">
+        <view>目前自制表情的方式有如下几种</view>
+        <view>
+            <image class="icon" mode="aspectFit" src="https://dl.weshineapp.com/banner/20180417/icon_24697.png"></image>1.小程序首页「神配图」功能，可以用你输入的任意文字生成一张表情图。</view>
+        <view>
+            <image class="icon" mode="aspectFit" src="https://dl.weshineapp.com/banner/20180517/icon_67239.png"></image>2.小程序首页「换脸表情」功能，可以把自己或者朋友的脸，放到表情上。</view>
+        <view>
+            <image class="icon" mode="aspectFit" src="https://dl.weshineapp.com/banner/20180425/icon_89586.png"></image>3.小程序首页「恶搞字幕」功能，可以给时下最火的动图添加一组文字。</view>
+        <view>
+            <image class="icon" mode="aspectFit" src="http://dl.weshineapp.com/banner/20180517/icon_8383.png"></image>4.小程序首页「表情加字」功能，可将提供的模版加上你想输入的文字。可以给表情图添加任意文字。</view>
+        <view>
+            <image class="icon" mode="aspectFit" src="/resources/img/detail-changeword.gif"></image>5.闪萌表情小程序内的任意一张表情，点击进入「图片详情」页，可对该图进行“加字改字”。</view>
+        <view>说明：目前暂不支持上传自己的图片制作表情。</view>
+    </block>
+    <text wx:else>{{content}}</text>
+</template>
+<view class="assistant-section">
+    <view class="overflow" wx:for="{{qaData.questionsList}}" wx:key="q">
+        <v-collapse index="{{index}}" item="{{item}}">
+            <view slot="title">
+                <em class="title-em">Q{{index+1}}.</em>{{item.q}}</view>
+            <view slot="content">
+                <template is="q&a" data="{{index:index,content:item.a}}"></template>
+            </view>
+        </v-collapse>
+    </view>
+    <button bind:tap="pingContact" class="assistant-contact helper-btn" openType="contact">
+        <image class="contact-icon" src="/resources/img/contact.png"></image>
+        <text>私聊小闪</text>
+    </button>
+</view>
+<wxs module="qaData">
+var questionsList = [({
+    q: "如何快速找回闪萌表情小程序？",
+    a: "",
+}), ({
+    q: "怎么保存表情？",
+    a: "",
+}), ({
+    q: "如何一次性下载全套表情？",
+    a: "由于手机设备原因，目前仅支持一张一张保存",
+}), ({
+    q: "如何更方便地保存全套表情？",
+    a: "",
+}), ({
+    q: "下载完的表情在哪里看？",
+    a: "下载的表情全部保存在了您的手机相册里。",
+}), ({
+    q: "表情保存后怎么用？",
+    a: "",
+}), ({
+    q: "表情如何放到微信收藏里？",
+    a: "",
+}), ({
+    q: "如何快速高效发闪萌表情给好友？",
+    a: "",
+}), ({
+    q: "如何找到想要的表情？",
+    a: "",
+}), ({
+    q: "保存图片失败怎么办？",
+    a: "若出现此情况，请在微信-发现-小程序页面内，删除“闪萌表情”小程序后，重新搜索“闪萌表情”进入小程序，且不要禁止小程序的访问权限。",
+}), ({
+    q: "如何自己制作表情？",
+    a: "",
+})];
+module.exports.questionsList = questionsList;
+</wxs>

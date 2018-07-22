@@ -1,0 +1,116 @@
+.magic-wrap {
+    height: 416rpx;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.magic-box {
+    width: 360rpx;
+    height: 360rpx;
+    margin: 28rpx auto 0rpx;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.magic-progress {
+    width: 100%;
+    height: 8rpx;
+    background-color: #FFDA44;
+    position: absolute;
+    left: 0rpx;
+    bottom: 0rpx;
+}
+
+.magic-loading {
+    display: inline-block;
+    width: 360rpx;
+    height: 180rpx;
+    margin: 95rpx auto;
+}
+
+.magic-img {
+    width: 100%;
+    height: 100%;
+}
+
+.no-kw-bg {
+    position: absolute;
+    height: 336rpx;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.no-kw {
+    box-sizing: border-box;
+    font-size: 28rpx;
+    color: #888;
+    text-align: center;
+    padding-top: 338rpx;
+}
+
+.btns {
+    display: flex;
+    margin: 30rpx 0;
+    background-color: transparent;
+}
+
+.btns .btn {
+    position: relative;
+    line-height: 88rpx;
+    background: #FFFFFF;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+    color: #333333;
+    text-indent: 67rpx;
+    margin-left: 26rpx;
+    width: 214rpx;
+    height: 88rpx;
+}
+
+.btn .icon {
+    position: absolute;
+    width: 36rpx;
+    height: 36rpx;
+    left: 22rpx;
+    top: 26rpx;
+}
+
+.inputWrap {
+    position: relative;
+    margin: 0 28rpx;
+    background-color: transparent;
+}
+
+.inputWrap input {
+    height: 90rpx;
+    border-radius: 10rpx;
+    background-color: #fff;
+    padding: 0 183rpx 0 35rpx;
+}
+
+.inputWrap .finish {
+    position: absolute;
+    top: 14rpx;
+    right: 18rpx;
+    width: 130rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    text-align: center;
+    border-radius: 200rpx;
+    background-color: #ffda44;
+    font-size: 28rpx;
+    color: #222;
+    z-index: 1;
+}
+
+.placeholder1 {
+    font-size: 32rpx;
+    color: #ccc;
+}
+
+.finish::after {
+    border: none;
+}

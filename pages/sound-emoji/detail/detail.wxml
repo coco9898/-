@@ -1,0 +1,24 @@
+<import src="../_template/video.wxml"></import>
+<view class="detail-container">
+    <view class="cf white-bg mb-20">
+        <template is="tVideo" data="{{id:videoId,autoplay:true,src:video,muted:false}}"></template>
+    </view>
+    <v-message class="v-section" duration="{{duration}}" small="{{true}}" type="voice" user="{{user}}"></v-message>
+    <view class="v-section">
+        <v-message hideTime="{{true}}" isLast="{{index===commentList.length-1}}" small="{{true}}" user="{{item}}" wx:for="{{commentList}}"></v-message>
+    </view>
+    <view class="flex operation-group white-bg">
+        <button catch:tap="favorVoice" class="btn operation-btn flex-item-1 flex flex-center flex-middle">
+            <image mode="widthFix" src="/resources/img/favor.png"></image>{{favorCount}}
+        </button>
+        <button class="btn operation-btn flex-item-1 flex flex-center flex-middle" wx:if="{{canComment}}">
+            <image mode="widthFix" src="/resources/img/icon4.png"></image>评论
+        </button>
+        <button class="btn operation-btn flex-item-1 flex flex-center flex-middle" openType="share">
+            <image mode="widthFix" src="/resources/img/share.png"></image>分享
+        </button>
+        <button catch:tap="startBuild" class="btn operation-btn flex-item-1 flex flex-center flex-middle">
+            <image mode="widthFix" src="/resources/img/record.png"></image>录制
+        </button>
+    </view>
+</view>

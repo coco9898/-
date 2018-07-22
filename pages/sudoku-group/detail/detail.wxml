@@ -1,0 +1,23 @@
+<view class="example">
+    <view class="info">
+        <image mode="aspectFit" src="{{example.avatar}}"></image>
+        <view>
+            <view class="nickname">{{example.nickName}}</view>
+            <view class="content">{{example.content}}</view>
+        </view>
+    </view>
+    <view class="sudoku-wrap">
+        <view class="pic-wrap" wx:for="{{picList}}" wx:key="{{ index }}">
+            <image bindtap="previewImage" data-index="{{index}}" src="{{item}}" style="top:{{imageTop}}rpx;height:{{imageHeight}}rpx;"></image>
+        </view>
+    </view>
+</view>
+<view class="btn-wrap">
+    <view class="btn">
+        <upload bindtap="uploadTap" bindupdatelist="create" btnText="上传照片" class="upload-com" item="{{uploadObj}}" previewShow="{{false}}" sizeType="{{['compressed']}}" trimed="{{trimedImg}}" type="text-btn" wrapClass=""></upload>
+    </view>
+    <view bindtap="saveImage" class="btn">
+        <image src="../../../resources/img/save.png"></image>
+        <text>保存九宫格</text>
+    </view>
+</view>

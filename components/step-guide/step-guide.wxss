@@ -1,0 +1,126 @@
+view {
+    background: transparent;
+}
+
+.mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 900;
+}
+
+.mask-opacity {
+    background-color: rgba(0,0,0,0);
+}
+
+.mask-down {
+    top: 500rpx;
+}
+
+.example {
+    position: absolute;
+}
+
+.hand {
+    position: absolute;
+    width: 86rpx;
+    height: 90rpx;
+}
+
+.arrow {
+    position: absolute;
+    width: 32rpx;
+    height: 44rpx;
+}
+
+.tip {
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 4rpx 6rpx rgba(0,0,0,0.50);
+    font-family: PingFangSC-Regular;
+    font-size: 40rpx;
+    color: #fff;
+    width: 500rpx;
+}
+
+.processing-seat .example {
+    width: 642rpx;
+    height: 306rpx;
+    left: 50%;
+    top: 76rpx;
+    transform: translateX(-50%);
+}
+
+.processing-seat .hand {
+    right: 102rpx;
+    top: 358rpx;
+}
+
+.processing-seat .arrow {
+    left: 136rpx;
+    top: 412rpx;
+}
+
+.processing-seat .tip {
+    left: 136rpx;
+    top: 428rpx;
+}
+
+.processing-image .example {
+    width: 730rpx;
+    height: 122rpx;
+    left: 50%;
+    top: 5rpx;
+    transform: translateX(-50%);
+}
+
+.processing-image .hand {
+    right: 62rpx;
+    top: 103rpx;
+}
+
+.processing-image .arrow {
+    left: 136rpx;
+    top: 155rpx;
+}
+
+.processing-image .tip {
+    left: 129rpx;
+    top: 167rpx;
+}
+
+.processing-share .example {
+    width: 366rpx;
+    height: 122rpx;
+    right: 10rpx;
+    top: 190rpx;
+}
+
+.processing-share .hand {
+    top: 296rpx;
+    right: 42rpx;
+}
+
+.processing-share .arrow {
+    left: 480rpx;
+    top: 344rpx;
+    transform: rotateY(180deg);
+}
+
+.processing-share .tip {
+    top: 370rpx;
+    left: 22rpx;
+}
+
+.share-btn {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+}

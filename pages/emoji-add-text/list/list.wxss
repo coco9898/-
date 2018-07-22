@@ -1,0 +1,40 @@
+.section {
+    margin-bottom: 20rpx;
+}
+
+.title-bar {
+    display: flex;
+    border: none;
+    color: #222;
+    text-indent: 0;
+    padding: 20rpx 0;
+    margin: 0 20rpx;
+    position: relative;
+    height: 44rpx;
+    font-size: 34rpx;
+}
+
+.pic image {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    text-align: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mask text {
+    font-size: 28rpx;
+}

@@ -1,0 +1,79 @@
+.share-guide {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: -128rpx;
+    bottom: 0;
+    background: black;
+    z-index: 10000;
+}
+
+.guide-thumb {
+    z-index: 998;
+    position: absolute;
+    top: 46%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.guide-thumb>image {
+    width: 100%;
+    display: block;
+}
+
+.guide-hand {
+    width: 460rpx;
+    height: 460rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: 3;
+}
+
+.guide-mask {
+    z-index: 2;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 30rpx;
+    text-align: center;
+    color: #fff;
+    background-color: transparent;
+    z-index: 999;
+}
+
+.guide-txt {
+    font-size: 40rpx;
+}
+
+.guide-btn {
+    width: 244rpx;
+    height: 84rpx;
+    line-height: 84rpx;
+    border-radius: 200rpx;
+    background-color: #FFDA44;
+    margin: 20rpx auto;
+    color: #222222;
+    font-size: 32rpx;
+}
+
+.guide-ad {
+    font-size: 28rpx;
+    opacity: 0.5;
+    margin: 0 auto;
+}
+
+.bgc-opc {
+    background-color: transparent;
+}

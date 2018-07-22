@@ -1,0 +1,12 @@
+<view bindtap="_showPreview" class="share-guide" wx:if="{{_guideShow}}">
+    <view class="guide-thumb">
+        <image mode="widthFix" src="{{imgSrc}}"></image>
+        <image class="guide-hand" mode="aspectFit" src="../../resources/img/hand.png"></image>
+        <view class="guide-mask"></view>
+    </view>
+    <view class="footer">
+        <view class="bgc-opc guide-txt">长按发送或保存表情</view>
+        <view class="guide-btn">我知道了</view>
+        <view class="guide-ad bgc-opc">关注闪萌表情公众号，获取每日最新最潮表情推送</view>
+    </view>
+</view>

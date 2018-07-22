@@ -1,0 +1,25 @@
+<view class="jigsaw-container">
+    <view class="score-area flex flex-around">
+        <view class="score-info">原图查看次数：{{viewCount}}</view>
+        <view class="score-info">移动次数：{{moveCount}}</view>
+    </view>
+    <view class="jigsaw-game-area">
+        <view class="flex" wx:if="{{imageList.length}}" wx:for="{{row}}" wx:for-index="i" wx:key="*this">
+            <image catch:tap="switchPosition" class="jigsaw-game-item flex-item-1" data-index="{{i*row+j}}" mode="widthFix" src="{{imageList[i*row+j].src}}" wx:for="{{row}}" wx:for-index="j" wx:key="src"></image>
+        </view>
+    </view>
+    <view class="upload-btn">
+        <image src="/resources/img/upload.png"></image>
+        <text>上传</text>
+        <v-upload item="{{uploadObj}}" previewShow="{{false}}" sizeType="{{['compressed']}}" type="text-btn" wrapClass="wrap-cover"></v-upload>
+    </view>
+    <view class="operation-area flex">
+        <button catch:tap="restartGame" class="btn btn-primary flex-item-1 {{trimedImg?'':'disabled'}}">重来</button>
+        <button catch:tap="undoStep" class="btn btn-primary flex-item-1 {{trimedImg&&enableUndo?'':'disabled'}}">撤销</button>
+    </view>
+    <button catch:tap="viewImage" class="view-btn btn btn-primary {{trimedImg?'':'disabled'}}">看一眼原图</button>
+</view>
+<view catch:tap="closeImage" class="modal-block" hidden="{{hideImage}}">
+    <image class="modal-image" src="{{trimedImg}}"></image>
+</view>
+<canvas canvasId="{{canvasId}}" class="jigsaw-canvas"></canvas>

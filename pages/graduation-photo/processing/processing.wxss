@@ -1,0 +1,222 @@
+.canvas {
+    position: absolute;
+    left: -999999rpx;
+    bottom: 9999rpx;
+    z-index: -10;
+    width: 2100rpx;
+}
+
+.canvas.primary-canvas {
+    height: 1660rpx;
+}
+
+.canvas.thumbnail-canvas {
+    height: 1400rpx;
+}
+
+.canvas.poster-canvas {
+    width: 1500rpx;
+    height: 2092rpx;
+}
+
+view {
+    background: #f4f4f4;
+}
+
+.photo-container {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 500rpx;
+}
+
+.photo-container-image {
+    width: 100%;
+    height: 100%;
+}
+
+.image-item-container {
+    position: absolute;
+    overflow: visible;
+}
+
+.image-item {
+    width: 100%;
+    height: 100%;
+}
+
+.edit-personal-icon {
+    margin-right: 20rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.btn-container {
+    position: relative;
+    height: 88rpx;
+}
+
+.btn-auth {
+    background-color: rgba(0,255,0,0);
+    z-index: 2;
+}
+
+.edit-personal-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+    font-size: 32rpx;
+    border-radius: 10rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-weight: bold;
+}
+
+.block-section .btn.disabled {
+    color: #aaa;
+    background: #ddd;
+}
+
+.operation-note {
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    text-align: center;
+    color: #aaa;
+}
+
+.operation-note em {
+    color: #f34848;
+}
+
+.operation-note image {
+    margin-left: 4rpx;
+    width: 12rpx;
+    height: 20rpx;
+}
+
+.operation-btn {
+    margin-top: 40rpx;
+}
+
+.operation-btn .btn {
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 32rpx;
+    border-radius: 10rpx;
+    margin-right: 20rpx;
+    background: #fff;
+}
+
+.operation-btn .btn:last-child {
+    margin-right: 0;
+}
+
+.footer-btn {
+    margin-top: 226rpx;
+}
+
+.footer-btn .btn {
+    margin-right: 40rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    font-size: 28rpx;
+    color: #999;
+    background: transparent;
+}
+
+.footer-btn .btn:last-child {
+    margin-right: 0;
+}
+
+.operation-btn-icon {
+    margin-right: 12rpx;
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.position-point {
+    position: absolute;
+    width: 36rpx;
+    height: 40rpx;
+    top: -48rpx;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.display-userinfo {
+    position: absolute;
+    padding: 14rpx;
+    top: -88rpx;
+    height: 68rpx;
+    box-sizing: border-box;
+    line-height: 40rpx;
+    background: #222;
+    border-radius: 10rpx;
+    z-index: 100;
+    color: #fff;
+    white-space: nowrap;
+    box-shadow: 0 0 0 4rpx #fff;
+}
+
+.display-userinfo text {
+    margin-left: 10rpx;
+}
+
+.display-userinfo-avatar {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+}
+
+.arrow {
+    position: absolute;
+    top: -22rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 12rpx solid #222;
+    border-left: 12rpx solid transparent;
+    border-right: 12rpx solid transparent;
+    z-index: 101;
+}
+
+.arrow-behind {
+    position: absolute;
+    top: -22rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 16rpx solid #fff;
+    border-left: 16rpx solid transparent;
+    border-right: 16rpx solid transparent;
+    z-index: 99;
+}
+
+.opeartion-link {
+    display: inline-block;
+    margin-bottom: 4rpx;
+    border-bottom: 2rpx solid #aaa;
+}
+
+.refresh-btn {
+    position: absolute;
+    right: 104rpx;
+    bottom: 20rpx;
+    width: 64rpx;
+    height: 64rpx;
+}
+
+.share-btn {
+    position: absolute;
+    left: 18rpx;
+    bottom: 18rpx;
+    width: 416rpx;
+    height: 80rpx;
+    background: transparent;
+    z-index: 100;
+}
+
+.share-air {
+    width: 100%;
+    height: 100%;
+}
